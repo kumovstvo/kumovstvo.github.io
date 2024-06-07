@@ -14,13 +14,15 @@ document.querySelector('#selectList').addEventListener('change', function (e) {
   let listName = e.target.value;
   
   let text = loadFile("./res/olymps/"+listName).split("\n");
-  let datalistHtml = "";
+  let datalistHtml = "<option disabled selected>Выберите олимпиаду</option>";
   for(let j = 0; j < text.length; ++j) {
     text[j] = text[j].split(";");
     datalistHtml += `<option value="olymp${j}">${text[j][0]}</option>\n`;
   }
   console.log(datalistHtml)
-
+  
+  document.getElementById('selectOlymp').innerHTML = datalistHtml;
+  // insertAdjacentHTML("beforeend", blogHTML)
 });
 
 
