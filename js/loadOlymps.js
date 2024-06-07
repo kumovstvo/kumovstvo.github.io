@@ -14,6 +14,9 @@ const olympLists = ["rsosh-20_21.csv", "rsosh-21_22.csv", "rsosh-22_23.csv", "rs
 
 for(let i = 0; i < olympLists.length; ++i) {
   let text = loadFile("./res/olymps/"+olympLists[i]).split("\n");
+  for(let j = 0; j < text.length; ++j) {
+    text[j] = text[j].split(";");
+  }
   console.log(text);
 }
 
