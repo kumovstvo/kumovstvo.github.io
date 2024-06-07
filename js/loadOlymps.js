@@ -16,7 +16,7 @@ document.querySelector('#selectList').addEventListener('change', function (e) {
   let text = loadFile("./res/olymps/"+listName).split("\n");
   let datalistHtml = "<option disabled selected>Выберите олимпиаду</option>";
   for(let j = 0; j < text.length; ++j) {
-    text[j] = text[j].split(";");
+    text[j] = Array(Set(text[j].split(";")));
     datalistHtml += `<option value="olymp${j}">${text[j][0]}</option>\n`;
   }
   console.log(datalistHtml)
