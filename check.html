@@ -6,7 +6,6 @@
   <link rel="stylesheet" type="text/css" href="./css/main.css">
   <link rel="stylesheet" type="text/css" href="./css/header.css">
   <link rel="stylesheet" type="text/css" href="./css/achTable.css">
-  <script src="js/loadOlymps.js"></script>
 </head>
 <body>
   <header>
@@ -42,8 +41,17 @@
       </tr>
     </table>
     <form>
-      <select placeholder="123" name="select">
-        <option disabled selected value="s1">Выберите тип олимпиады</option>
+      <select id="selectList">
+        <option disabled selected>Выберите тип олимпиады</option>
+        <option value="vsosh.csv">ВсОШ</option>
+        <option value="rsosh-20_21.csv">РСОШ 2020-21</option>
+        <option value="rsosh-21_22.csv">РСОШ 2021-22</option>
+        <option value="rsosh-22_23.csv">РСОШ 2022-23</option>
+        <option value="rsosh-23_24.csv">РСОШ 2023-24</option>
+      </select>
+
+      <select id="selectOlymp">
+        <option disabled selected value="s1">Выберите олимпиаду</option>
         <option value="vsosh.csv">ВсОШ</option>
         <option value="rsosh-20_21.csv">РСОШ 2020-21</option>
         <option value="rsosh-21_22.csv">РСОШ 2021-22</option>
@@ -52,6 +60,8 @@
       </select>
 
       <input type="text" placeholder="123" list="options">
+
+      <script src="js/loadOlymps.js"></script>
     </form>
   </div>
 </body>
