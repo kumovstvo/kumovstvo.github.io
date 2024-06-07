@@ -1,0 +1,37 @@
+th {
+    border-bottom: 3px solid black;
+}
+
+td {
+    border-bottom: 1px solid black;
+}
+
+.achTable {
+    width:100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.achName {
+    width: calc((100% - 225px)*0.7);
+}
+
+.achProfile {
+    width: calc((100% - 225px)*0.3);
+}
+
+.achStatus {
+    width: 100px;
+    text-align: center;
+}
+
+.achClass {
+    width: 50px;
+    text-align: center;
+}
+
+.achYear {
+    width: 75px;
+    text-align: center;
+}
