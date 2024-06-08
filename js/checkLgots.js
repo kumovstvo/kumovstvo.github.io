@@ -113,7 +113,7 @@ function updateLgots() {
               <table class="lgota-programm-lgota">
                 <tr>`;
       let lgots = {};
-      for(const e of LGOTS[vuz].ege) {
+      for(const e of LGOTS[vuz].programs[i].ege) {
         if(e == 'M') {
           HTML += `<th title="Математика">М</th>`;
           lgots[e] = [];
