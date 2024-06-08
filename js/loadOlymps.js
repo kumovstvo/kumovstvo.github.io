@@ -14,11 +14,18 @@ document.querySelector('#selectList').addEventListener('change', function (e) {
   let listName = e.target.value;
   
   let text = loadFile("./res/olymps/"+listName).split("\n");
+  let olymps = new Set();
   let datalistHtml = "<option disabled selected>Выберите олимпиаду</option>";
   for(let j = 0; j < text.length; ++j) {
-    text[j] = new Array(new Set(text[j].split(";")));
-    datalistHtml += `<option value="olymp${j}">${text[j][0]}</option>\n`;
+    olymps.add(text[j][0]);
   }
+
+  let I = 0;
+  for(const i of olymps) {
+    datalistHtml += `<option value="olymp${I}">${i}</option>\n`;
+    I++;
+  }
+
   console.log(datalistHtml)
   
   document.getElementById('selectOlymp').innerHTML = datalistHtml;
