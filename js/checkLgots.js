@@ -112,15 +112,32 @@ function updateLgots() {
             <td>
               <table class="lgota-programm-lgota">
                 <tr>`;
+      let lgots = {};
       for(const e of LGOTS[vuz].ege) {
-        if(e == 'M') HTML += `<th title="Математика">М</th>`;
-        if(e == 'R') HTML += `<th title="Русский язык">РЯ</th>`;
-        if(e == 'F') HTML += `<th title="Физика">Ф</th>`;
-        if(e == 'I') HTML += `<th title="Информатика и ИКТ">ИКТ</th>`;
-        if(e == 'L') HTML += `<th title="Иностранный язык">ИЯ</th>`;
+        if(e == 'M') {
+          HTML += `<th title="Математика">М</th>`;
+          lgots[e] = [];
+        }
+        if(e == 'R') {
+          HTML += `<th title="Русский язык">РЯ</th>`;
+          lgots[e] = [];
+        }
+        if(e == 'F') {
+          HTML += `<th title="Физика">Ф</th>`;
+          lgots[e] = [];
+        }
+        if(e == 'I') {
+          HTML += `<th title="Информатика и ИКТ">ИКТ</th>`;
+          lgots[e] = [];
+        }
+        if(e == 'L') {
+          HTML += `<th title="Иностранный язык">ИЯ</th>`;
+          lgots[e] = [];
+        }
       }
       HTML += `<th title="Дополнительные баллы">+</th></tr>`
-
+      lgots["+"] = [];
     }
   }
+  console.log(HTML)
 }
