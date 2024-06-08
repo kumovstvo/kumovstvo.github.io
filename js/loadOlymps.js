@@ -48,12 +48,15 @@ document.querySelector('#selectOlymp').addEventListener('change', function (e) {
       profiles.add(text[j][1]);
     }
   }
+  console.log(profiles);
+  console.log(text);
 
   let I = 0;
   for(const i of profiles) {
     datalistHtml += `<option value="profile${I}">${i}</option>\n`;
     I++;
   }
+  console.log(datalistHtml);
   
   document.getElementById('selectProfile').innerHTML = datalistHtml;
 });
