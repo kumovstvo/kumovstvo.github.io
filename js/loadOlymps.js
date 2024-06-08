@@ -21,9 +21,9 @@ for(const list of olympLists) {
 
 console.log(OLYMPS)
 
-// var listNow = NaN;
-// var olympNow = NaN;
-// var profileNow = NaN;
+var listNow = NaN;
+var olympNow = NaN;
+var profileNow = NaN;
 
 function loadFile(filePath) {
   let result = null;
@@ -41,9 +41,9 @@ document.querySelector('#selectList').addEventListener('change', function (e) {
   let olymps = OLYMPS[listName];
 
   let I = 0;
-  let datalistHtml = "<option disabled selected>Выберите профиль олимпиады</option>";
+  let datalistHtml = "<option disabled selected>Выберите олимпиаду</option>";
   for(const i in olymps) {
-    datalistHtml += `<option value="olymp${I}">${i}</option>\n`;
+    datalistHtml += `<option value="${i}">${i}</option>\n`;
     I++;
   }
   
@@ -52,22 +52,11 @@ document.querySelector('#selectList').addEventListener('change', function (e) {
 });
 
 document.querySelector('#selectOlymp').addEventListener('change', function (e) {
-  alert("!");
   let olympName = e.target.value;
-  
-  let text = loadFile("./res/olymps/"+listNow).split("\n");
-  let profiles = new Set();
-  let datalistHtml = "<option disabled selected>Выберите профиль олимпиады</option>";
-  for(let j = 0; j < text.length; ++j) {
-    text[j] = text[j].split(";");
-    if(text[j][0] == olympName) {
-      profiles.add(text[j][1]);
-    }
-  }
-  console.log(profiles);
-  console.log(text);
+  let profiles = OLYMPS[listNow][olympName];
 
   let I = 0;
+  let datalistHtml = "<option disabled selected>Выберите профиль олимпиады</option>";
   for(const i of profiles) {
     datalistHtml += `<option value="profile${I}">${i}</option>\n`;
     I++;
@@ -75,6 +64,7 @@ document.querySelector('#selectOlymp').addEventListener('change', function (e) {
   console.log(datalistHtml);
   
   document.getElementById('selectProfile').innerHTML = datalistHtml;
+  olympNow = olympName;
 });
 
 
