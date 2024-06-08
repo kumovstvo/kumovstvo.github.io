@@ -38,7 +38,7 @@ for(const vuz of vuzs) {
 
   for(;i < text.length; ++i) {
     text[i] = text[i].split(";");
-    if(text[i].length != 5) continue;
+    if(text[i].length != 6) continue;
     
     let olymp = text[i][1];
     let profile = text[i][2];
@@ -46,6 +46,7 @@ for(const vuz of vuzs) {
     let minLevel = Number(text[i][3][1]);
     let prgrs = text[i][4].split(" ");
     let lg = text[i][0];
+    let predmet = text[i][5];
 
     if(olymp != "*") {
       for(const list of olympLists) {
@@ -80,7 +81,45 @@ for(const vuz of vuzs) {
     } 
   }
 
-  LGOTS[vuz] = programs;
+  LGOTS[vuz] = {
+    name: shortName,
+    fullName: longName,
+    minClass: minClass,
+    programs: programs,
+    predmet: predmet
+  };
 }
 
 console.log(LGOTS);
+
+function updateLgots() {
+  let HTML = "";
+  for(const vuz of vuzs) {
+    HTML += `<div class="lgota">
+    <div class="lgota-vuz-name" title="${LGOTS[vuz].fullName}">${LGOTS[vuz].name}</div>
+    <table class="lgota-table" style="border-collapse: collapse;">`
+    for(const i in LGOTS[vuz].programs) {
+      HTML += `<tr>
+            <td class="lgota-programm-number">${i}</td>
+            <td class="lgota-programm">
+              <div>
+                <div class="lgota-programm-code">${LGOTS[vuz].programs[i].code}</div>
+                <div class="lgota-programm-name">${LGOTS[vuz].programs[i].name}</div>
+              </div>
+            </td>
+            <td class="lgota-programm-ege">---</td>
+            <td>
+              <table class="lgota-programm-lgota">
+                <tr>`;
+      for(const e of LGOTS[vuz].ege) {
+        if(e == 'M') HTML += `<th title="Математика">М</th>`;
+        if(e == 'R') HTML += `<th title="Русский язык">РЯ</th>`;
+        if(e == 'F') HTML += `<th title="Физика">Ф</th>`;
+        if(e == 'I') HTML += `<th title="Информатика и ИКТ">ИКТ</th>`;
+        if(e == 'L') HTML += `<th title="Иностранный язык">ИЯ</th>`;
+      }
+      HTML += `<th title="Дополнительные баллы">+</th></tr>`
+
+    }
+  }
+}
