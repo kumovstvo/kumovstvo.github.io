@@ -1,5 +1,5 @@
 updateTable();
-const olympLists = ["vsosh.csv","rsosh-20_21.csv", "rsosh-21_22.csv", "rsosh-22_23.csv", "rsosh-23_24.csv"];
+var olympLists = ["vsosh.csv","rsosh-20_21.csv", "rsosh-21_22.csv", "rsosh-22_23.csv", "rsosh-23_24.csv"];
 var OLYMPS = {};
 
 for(const list of olympLists) {

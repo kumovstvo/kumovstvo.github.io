@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="./css/main.css">
   <link rel="stylesheet" type="text/css" href="./css/header.css">
   <link rel="stylesheet" type="text/css" href="./css/achTable.css">
+  <link rel="stylesheet" type="text/css" href="./css/lgota.css">
 </head>
 <body>
   <header>
@@ -30,14 +31,6 @@
         <th class="achProfile">Профиль</th>
         <th class="achStatus">Статус</th>
         <th class="achClass">Класс</th>
-        <th class="achYear">Тип</th>
-      </tr>
-      <tr>
-        <td class="achName">Открытая олимпиада школьников</td>
-        <td class="achProfile">информатика</td>
-        <td class="achStatus">Победитель</td>
-        <td class="achClass">10</td>
-        <td class="achYear">2023-24</td>
       </tr>
     </table>
     <form onsubmit="return false;">
@@ -70,6 +63,71 @@
 
       <script src="js/loadOlymps.js"></script>
     </form>
+
+    <div class="lgota">
+      <div class="lgota-vuz-name" title="Федеральное государственное автономное образовательное учреждение высшего образования &laquo;Национальный исследовательский университет ИТМО&raquo;">Университет ИТМО</div>
+      <table class="lgota-table" style="border-collapse: collapse;">
+        <tr>
+          <td class="lgota-programm-number">1</td>
+          <td class="lgota-programm">
+            <div>
+              <div class="lgota-programm-code">01.03.02</div>
+              <div class="lgota-programm-name">Прикладная физика</div>
+            </div>
+          </td>
+          <td class="lgota-programm-ege">---</td>
+          <td>
+            <table class="lgota-programm-lgota">
+              <tr>
+                <th title="Математика">М</th>
+                <th title="Русский язык">РЯ</th>
+                <th title="Химия">Х</th>
+                <th title="Физика">Ф</th>
+                <th title="Дополнительные баллы">+</th>
+              </tr>
+              <tr>
+                <td title="100: Открытая олимпиада школьников (математика, 10)
+100: Открытая олимпиада школьников (математика, 9)">100</td>
+                <td title="Льгот не найдено">-</td>
+                <td title="Льгот не найдено">-</td>
+                <td title="БВИ: Всероссийская олимпиада школьников по физике (физика, 9)
+100: Открытая олимпиада школьников (физика, 11)">БВИ</td>
+                <td>0</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="lgota-programm-number">15</td>
+          <td class="lgota-programm">
+            <div>
+              <div class="lgota-programm-code">12.03.01, 13.03.02, 15.03.04, 15.03.06, 24.03.02, 27.03.04</div>
+              <div class="lgota-programm-name">Компьютерные технологии: Программирование и искусственный интеллект</div>
+            </div>
+          </td>
+          <td class="lgota-programm-ege">---</td>
+          <td class="lgota-programm-lgota-td">
+            <table class="lgota-programm-lgota">
+              <tr>
+                <th title="Математика">М</th>
+                <th title="Русский язык">РЯ</th>
+                <th title="Физика">Ф</th>
+                <th title="Дополнительные баллы">+</th>
+              </tr>
+              <tr>
+                <td title="100: Открытая олимпиада школьников (математика, 10)
+100: Открытая олимпиада школьников (математика, 9)">100</td>
+                <td title="Льгот не найдено">-</td>
+                <td title="БВИ: Всероссийская олимпиада школьников по физике (физика, 9)
+100: Открытая олимпиада школьников (физика, 11)">БВИ</td>
+                <td title="Льгот не найдено">0</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <script src="js/checkLgots.js"></script>
+    </div>
   </div>
 </body>
 </html>

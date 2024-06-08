@@ -1,8 +1,8 @@
-th {
+.achTable th {
     border-bottom: 3px solid black;
 }
 
-td {
+.achTable td {
     border-bottom: 1px solid black;
 }
 
