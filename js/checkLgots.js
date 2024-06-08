@@ -38,6 +38,8 @@ for(const vuz of vuzs) {
 
   for(;i < text.length; ++i) {
     text[i] = text[i].split(";");
+    if(text[i].length != 5) continue;
+    
     let olymp = text[i][1];
     let profile = text[i][2];
     let minStatus = text[i][3][0];
@@ -45,13 +47,13 @@ for(const vuz of vuzs) {
     let prgrs = text[i][4].split(" ");
     let lg = text[i][0];
 
-    if(text[i].length != 5) continue;
-    if(text[i][1] != "*") {
-      for(let list of olympLists) {
+    
+    if(olymp != "*") {
+      for(const list of olympLists) {
         if(OLYMPS[list].hasOwnProperty(olymp) &&
         OLYMPS[list][olymp].hasOwnProperty(profile) &&
         Number(OLYMPS[list][olymp][profile]) >= minLevel) {
-          for(let pr of prgrs) {
+          for(const pr of prgrs) {
             if(!programs[pr].lgots.hasOwnProperty(list)) programs[pr].lgots[list] = {};
             if(!programs[pr].lgots[list].hasOwnProperty(olymp+` (${profile})`)) programs[pr].lgots[list][olymp+` (${profile})`] = [];
             programs[pr].lgots[list][olymp+` (${profile})`].push({
@@ -60,8 +62,23 @@ for(const vuz of vuzs) {
             });
           }
         }
+      } 
+    } else {
+      for(const list of olympLists) {
+        for(const ol in OLYMPS[list]) {
+          if(OLYMP[list][ol].hasOwnProperty(profile) && Number(OLYMPS[list][olymp][profile]) >= minLevel) {
+            for(const pr of prgrs) {
+              if(!programs[pr].lgots.hasOwnProperty(list)) programs[pr].lgots[list] = {};
+              if(!programs[pr].lgots[list].hasOwnProperty(olymp+` (${profile})`)) programs[pr].lgots[list][olymp+` (${profile})`] = [];
+              programs[pr].lgots[list][olymp+` (${profile})`].push({
+                status: minStatus,
+                lgota: lg
+              });
+            }
+          }
+        }
       }
-    }
+    } 
   }
 
   console.log(programs);
