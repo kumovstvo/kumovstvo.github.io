@@ -209,9 +209,10 @@ function updateLgots() {
           else if(mx == 0) HTML += `БВИ</td>`;
         }
       }
-      HTML += `<td>0</td></tr>`
+      HTML += `<td>0</td></tr></table></td></tr>`
       console.log([vuz,i,lgots]);
     }
+    HTML += "</div>"
   }
   // console.log(HTML);
   document.getElementById('ZZZ').innerHTML = HTML;
