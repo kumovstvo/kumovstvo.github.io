@@ -38,12 +38,12 @@ for(const vuz of vuzs) {
 
   for(;i < text.length; ++i) {
     text[i] = text[i].split(";");
-    let olymp = text[1];
-    let profile = text[2];
-    let minStatus = text[3][0];
-    let minLevel = Number(text[3][1]);
-    let prgrs = text[4].split(" ");
-    let lg = text[0];
+    let olymp = text[i][1];
+    let profile = text[i][2];
+    let minStatus = text[i][3][0];
+    let minLevel = Number(text[i][3][1]);
+    let prgrs = text[i][4].split(" ");
+    let lg = text[i][0];
 
     if(text[i].length != 5) continue;
     if(text[i][1] != "*") {
