@@ -173,23 +173,46 @@ function updateLgots() {
           lgots[e] = [];
         }
       }
+      HTML += `<th title="Дополнительные баллы">+</th></tr>`
+      lgots["+"] = [];
 
       for(const list in now) {
         for(const ol in now[list]) {
           if(LGOTS[vuz].programs[i].lgots.hasOwnProperty(list) && LGOTS[vuz].programs[i].lgots[list].hasOwnProperty(ol)) {
             for(const U of LGOTS[vuz].programs[i].lgots[list][ol]) {
               if((now[list][ol].status == U.status || U.status == "P") && Number(LGOTS[vuz].minClass) <= now[list][ol].class) {
-                lgots[U.predmet].push([Number(U.lgota), ol]);
+                if(U.predmet == '*') {
+                  for(const j in lgots) {
+                    if(j != '+') lgots[j].push([Number(U.lgota), ol])
+                  }
+                } else lgots[U.predmet].push([Number(U.lgota), ol]);
               }
             }
           }
         }
       }
 
+      HTML += `<tr>`;
+      for(const i in lgots) {
+        if(lgots[i].length == 0) {
+          HTML += `<td title="Льгот не найдено">-</td>`;
+        } else {
+          let mx = -100;
+          HTML += `<td title="`
+          for(const j of lgots[i]) {
+            mx = max(mx, j[0]);
+            if(j[0] == 0) HTML += `БВИ: ${j[1]}\n`;
+            else if(j[0] == -1) HTML += `100: ${j[1]}\n`;
+          }
+          HTML += `">`;
+          if(mx == -1) HTML += `100</td>`;
+          else if(mx == 0) HTML += `БВИ</td>`;
+        }
+      }
+      HTML += `<td>0</td></tr>`
       console.log([vuz,i,lgots]);
-      HTML += `<th title="Дополнительные баллы">+</th></tr>`
-      lgots["+"] = [];
     }
   }
-  console.log(HTML);
+  // console.log(HTML);
+  document.getElementById('ZZZ').innerHTML = HTML;
 }
