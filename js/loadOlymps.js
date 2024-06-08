@@ -36,6 +36,7 @@ document.querySelector('#selectList').addEventListener('change', function (e) {
 });
 
 document.querySelector('#selectOlymp').addEventListener('change', function (e) {
+  alert("!");
   let olympName = e.target.value;
   
   let text = loadFile("./res/olymps/"+listNow).split("\n");
