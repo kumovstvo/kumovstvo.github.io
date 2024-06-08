@@ -100,13 +100,20 @@ function updateTable() {
 }
 
 function addAch() {
+  if(!localStorage.getItem("ach")) localStorage["ach"]="";
+
   let list = document.getElementById('selectList').value;
   let olymp = document.getElementById('selectOlymp').value;
   let profile = document.getElementById('selectProfile').value;
   let clasS = document.getElementById('selectClass').value;
   let status = document.getElementById('selectStatus').value;
   let olympLevel = OLYMPS[list][olymp][profile];
-  if(!localStorage.getItem("ach")) localStorage["ach"]="";
+
+  if(list == "*" || olymp == "*" || profile == "*" || clasS == "*" || status == "*" || olympLevel == "*") {
+    alert("Заполните все поля!");
+    return;
+  }
+
   localStorage["ach"] += `${list};${olymp};${profile};${olympLevel};${clasS};${status}|`;
   updateTable();
 }
