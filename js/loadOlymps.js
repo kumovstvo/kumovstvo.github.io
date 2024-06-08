@@ -68,5 +68,11 @@ document.querySelector('#selectOlymp').addEventListener('change', function (e) {
 });
 
 function addAch() {
-  alert(123);
+  let list = document.getElementById('selectList').value;
+  let olymp = document.getElementById('selectOlymp').value;
+  let profile = document.getElementById('selectProfile').value;
+  let clasS = document.getElementById('selectClass').value;
+  let status = document.getElementById('selectStatus').value;
+  let olympLevel = OLYMPS[list][olymp][profile];
+  localStorage["ach"] = localStorage["ach"] + `${list};${olymp};${olympLevel};${clasS};${status}\n`;
 }
