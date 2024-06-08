@@ -185,10 +185,7 @@ function updateLgots() {
                   for(const j in lgots) {
                     if(j != '+') lgots[j].push([Number(U.lgota), ol])
                   }
-                } else {
-                  console.log([i, list, ol, lgots, U]);
-                  lgots[U.predmet].push([Number(U.lgota), ol]);
-                }
+                } else if(lgots.hasOwnProperty(U.predmet)) lgots[U.predmet].push([Number(U.lgota), ol]);
               }
             }
           }
