@@ -40,7 +40,7 @@
         <td class="achYear">2023-24</td>
       </tr>
     </table>
-    <form>
+    <form onsubmit="return false;">
       <select id="selectList">
         <option disabled selected>Выберите тип достижения</option>
         <option value="vsosh.csv">ВсОШ</option>
@@ -66,7 +66,7 @@
       <select id="selectProfile">
         <option disabled selected>Выберите профиль достижения</option>
       </select>
-      <input type="submit" value="Добавить">
+      <button onclick="addAch()">Добавить</button>
 
       <script src="js/loadOlymps.js"></script>
     </form>
