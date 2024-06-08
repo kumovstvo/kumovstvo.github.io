@@ -11,9 +11,9 @@ for(const list of olympLists) {
     text[j] = text[j].split(";");
 
     if(!olymps.hasOwnProperty(text[j][0])) {
-      olymps[text[j][0]] = [];
+      olymps[text[j][0]] = {};
     }
-    olymps[text[j][0]].push([text[j][1],text[j][2]]);
+    olymps[text[j][0]][text[j][1]] = text[j][2];
   }
 
   OLYMPS[list] = olymps;
@@ -57,8 +57,8 @@ document.querySelector('#selectOlymp').addEventListener('change', function (e) {
 
   let I = 0;
   let datalistHtml = "<option disabled selected>Выберите профиль олимпиады</option>";
-  for(const i of profiles) {
-    datalistHtml += `<option value="profile${I}">${i}</option>\n`;
+  for(const i in profiles) {
+    datalistHtml += `<option value="${i}">${i}</option>\n`;
     I++;
   }
   console.log(datalistHtml);
