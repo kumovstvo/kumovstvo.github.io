@@ -112,6 +112,7 @@ function updateLgots() {
 
   let HTML = "";
   for(const vuz of vuzs) {
+    console.log(vuz);
     HTML += `<div class="lgota">
     <div class="lgota-vuz-name" title="${LGOTS[vuz].fullName}">${LGOTS[vuz].name}</div>
     <table class="lgota-table" style="border-collapse: collapse;">`
@@ -211,10 +212,10 @@ function updateLgots() {
           else if(mx == 0) HTML += `БВИ</td>`;
         }
       }
-      HTML += `<td>0</td></tr></table></td></tr>`
+      HTML += `<td>0</td></tr></table></td></tr>`;
     }
-    HTML += "</div>"
+    HTML += "</div>";
   }
-  // console.log(HTML);
+  console.log(HTML);
   document.getElementById('ZZZ').innerHTML = HTML;
 }
