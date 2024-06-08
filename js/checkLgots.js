@@ -186,7 +186,7 @@ function updateLgots() {
                     if(j != '+') lgots[j].push([Number(U.lgota), ol])
                   }
                 } else {
-                  console.log([lgots, U.predmet]);
+                  console.log([i, list, ol, lgots, U]);
                   lgots[U.predmet].push([Number(U.lgota), ol]);
                 }
               }
