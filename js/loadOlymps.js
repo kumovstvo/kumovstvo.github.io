@@ -41,6 +41,7 @@ document.querySelector('#selectList').addEventListener('change', function (e) {
   let olymps = OLYMPS[listName];
 
   let I = 0;
+  let datalistHtml = "<option disabled selected>Выберите профиль олимпиады</option>";
   for(const i in olymps) {
     datalistHtml += `<option value="olymp${I}">${i}</option>\n`;
     I++;
