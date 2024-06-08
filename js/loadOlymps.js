@@ -74,5 +74,6 @@ function addAch() {
   let clasS = document.getElementById('selectClass').value;
   let status = document.getElementById('selectStatus').value;
   let olympLevel = OLYMPS[list][olymp][profile];
-  localStorage["ach"] = localStorage["ach"] + `${list};${olymp};${olympLevel};${clasS};${status}\n`;
+  if(!localStorage.getItem("ach")) localStorage["ach"]="";
+  localStorage["ach"] += `${list};${olymp};${olympLevel};${clasS};${status}\n`;
 }
