@@ -200,7 +200,7 @@ function updateLgots() {
           let mx = -100;
           HTML += `<td title="`
           for(const j of lgots[i]) {
-            mx = max(mx, j[0]);
+            mx = Math.max(mx, j[0]);
             if(j[0] == 0) HTML += `БВИ: ${j[1]}\n`;
             else if(j[0] == -1) HTML += `100: ${j[1]}\n`;
           }
