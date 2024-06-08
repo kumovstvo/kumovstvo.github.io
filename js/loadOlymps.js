@@ -17,7 +17,7 @@ document.querySelector('#selectList').addEventListener('change', function (e) {
   let olymps = new Set();
   let datalistHtml = "<option disabled selected>Выберите олимпиаду</option>";
   for(let j = 0; j < text.length; ++j) {
-    text[j] = test[j].split(";");
+    text[j] = text[j].split(";");
     olymps.add(text[j][0]);
   }
 
