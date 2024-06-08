@@ -214,7 +214,7 @@ function updateLgots() {
       }
       HTML += `<td>0</td></tr></table></td></tr>`;
     }
-    HTML += "</div>";
+    HTML += "</table></div>";
   }
   console.log(HTML);
   document.getElementById('ZZZ').innerHTML = HTML;
