@@ -36,7 +36,7 @@ for(const vuz of vuzs) {
     }
   }
 
-  for(;i < text.length(); ++i) {
+  for(;i < text.length; ++i) {
     text[i] = text[i].split(";");
     let olymp = text[1];
     let profile = text[2];
