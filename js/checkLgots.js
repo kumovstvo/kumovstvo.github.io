@@ -73,7 +73,8 @@ for(const vuz of vuzs) {
               if(!programs[pr].lgots[list].hasOwnProperty(ol+` (${profile})`)) programs[pr].lgots[list][ol+` (${profile})`] = [];
               programs[pr].lgots[list][ol+` (${profile})`].push({
                 status: minStatus,
-                lgota: lg
+                lgota: lg,
+                predmet:predmet
               });
             }
           }
