@@ -1,3 +1,7 @@
+var listNow = NaN;
+var olympNow = NaN;
+var profileNow = NaN;
+
 function loadFile(filePath) {
   let result = null;
   let xmlhttp = new XMLHttpRequest();
@@ -26,11 +30,31 @@ document.querySelector('#selectList').addEventListener('change', function (e) {
     datalistHtml += `<option value="olymp${I}">${i}</option>\n`;
     I++;
   }
-
-  console.log(datalistHtml)
   
   document.getElementById('selectOlymp').innerHTML = datalistHtml;
-  // insertAdjacentHTML("beforeend", blogHTML)
+  listNow = listName;
+});
+
+document.querySelector('#selectOlymp').addEventListener('change', function (e) {
+  let olympName = e.target.value;
+  
+  let text = loadFile("./res/olymps/"+listNow).split("\n");
+  let profiles = new Set();
+  let datalistHtml = "<option disabled selected>Выберите профиль олимпиады</option>";
+  for(let j = 0; j < text.length; ++j) {
+    text[j] = text[j].split(";");
+    if(text[j][0] == olympName) {
+      profiles.add(text[j][1]);
+    }
+  }
+
+  let I = 0;
+  for(const i of profiles) {
+    datalistHtml += `<option value="profile${I}">${i}</option>\n`;
+    I++;
+  }
+  
+  document.getElementById('selectProfile').innerHTML = datalistHtml;
 });
 
 
