@@ -47,10 +47,6 @@ for(const vuz of vuzs) {
     let prgrs = text[i][4].split(" ");
     let lg = text[i][0];
 
-    console.log(i);
-    console.log([olymp,profile,minStatus,minLevel,prgrs, lg]);
-
-    
     if(olymp != "*") {
       for(const list of olympLists) {
         if(OLYMPS[list].hasOwnProperty(olymp) &&
@@ -69,7 +65,6 @@ for(const vuz of vuzs) {
     } else {
       for(const list of olympLists) {
         for(const ol in OLYMPS[list]) {
-          console.log()
           if(OLYMPS[list][ol].hasOwnProperty(profile) && Number(OLYMPS[list][ol][profile]) <= minLevel) {
             for(const pr of prgrs) {
               if(!programs[pr].lgots.hasOwnProperty(list)) programs[pr].lgots[list] = {};
@@ -85,5 +80,7 @@ for(const vuz of vuzs) {
     } 
   }
 
-  console.log(programs);
+  LGOTS[vuz] = programs;
 }
+
+console.log(LGOTS);
