@@ -48,12 +48,12 @@ for(const vuz of vuzs) {
     if(text[i].length != 5) continue;
     if(text[i][1] != "*") {
       for(let list of olympLists) {
-        if(OLYMPS[list].hasOwnProperty(text[i][1]) &&
-        OLYMPS[list][text[i][1]].hasOwnProperty(text[i][2]) &&
-        Number(OLYMPS[list][text[i][1]][text[i][2]]) >= minLevel) {
+        if(OLYMPS[list].hasOwnProperty(olymp) &&
+        OLYMPS[list][olymp].hasOwnProperty(profile) &&
+        Number(OLYMPS[list][olymp][profile]) >= minLevel) {
           for(let pr of prgrs) {
             if(!programs[pr].lgots.hasOwnProperty(list)) programs[pr].lgots[list] = {};
-            if(!programs[pr].lgots[list].hasOwnProperty(olymp+` (${profile})`)) programs[pr].lgots[list] = [];
+            if(!programs[pr].lgots[list].hasOwnProperty(olymp+` (${profile})`)) programs[pr].lgots[list][olymp+` (${profile})`] = [];
             programs[pr].lgots[list][olymp+` (${profile})`].push({
               status: minStatus,
               lgota: lg
