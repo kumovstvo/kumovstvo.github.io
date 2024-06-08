@@ -1,3 +1,4 @@
+updateTable();
 const olympLists = ["vsosh.csv","rsosh-20_21.csv", "rsosh-21_22.csv", "rsosh-22_23.csv", "rsosh-23_24.csv"];
 var OLYMPS = {};
 
@@ -69,7 +70,33 @@ document.querySelector('#selectOlymp').addEventListener('change', function (e) {
 });
 
 function updateTable() {
+  if(!localStorage.getItem("ach")) localStorage["ach"]="";
+  let text = localStorage["ach"].split("|");
 
+  let HTML = `
+  <tr>
+    <th class="achName">Достижение</th> 
+    <th class="achProfile">Профиль</th>
+    <th class="achStatus">Статус</th>
+    <th class="achClass">Класс</th>
+    <th class="achYear">Тип</th>
+  </tr>
+  `;
+
+  for(let i = 0; i < text.length; ++i) {
+    text[i] = text[i].split(";");
+    if(text[i].length != 6) continue;
+    HTML += `
+    <tr>
+      <td class="achName">${text[i][1]}</td>
+      <td class="achProfile">${text[i][2]}</td>
+      <td class="achStatus">${text[i][5]=="P" ? "Призёр" : "Победитель"}</td>
+      <td class="achClass">${text[i][4]}</td>
+      <td class="achYear">${text[i][0].slice(0,-4)}</td>
+    </tr>`;
+  }
+  console.log(HTML);
+  document.getElementById('achTable').innerHTML = HTML;
 }
 
 function addAch() {
