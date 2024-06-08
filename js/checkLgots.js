@@ -94,6 +94,20 @@ for(const vuz of vuzs) {
 console.log(LGOTS);
 
 function updateLgots() {
+  if(!localStorage.getItem("ach")) localStorage["ach"]="";
+  let text = localStorage["ach"].split("|");
+  let now = {};
+
+  for(let i = 0; i < text.length; ++i) {
+    text[i] = text[i].split(";");
+    if(text[i].length != 6) continue;
+    if(!now.hasOwnProperty(text[i][0])) now[text[i][0]] = {};
+    now[text[i][0]][`${text[i][1]} (${text[i][2]})`] = {
+      status: text[i][5],
+      class: text[i][4]
+    };
+  }
+
   let HTML = "";
   for(const vuz of vuzs) {
     HTML += `<div class="lgota">
@@ -114,30 +128,68 @@ function updateLgots() {
                 <tr>`;
       let lgots = {};
       for(const e of LGOTS[vuz].programs[i].ege) {
-        if(e == 'M') {
-          HTML += `<th title="Математика">М</th>`;
-          lgots[e] = [];
-        }
-        if(e == 'R') {
-          HTML += `<th title="Русский язык">РЯ</th>`;
-          lgots[e] = [];
-        }
         if(e == 'F') {
           HTML += `<th title="Физика">Ф</th>`;
           lgots[e] = [];
         }
+        if(e == 'C') {
+          HTML += `<th title="Химия">Х</th>`;
+          lgots[e] = [];
+        }
+        if(e == 'H') {
+          HTML += `<th title="История">И</th>`;
+          lgots[e] = [];
+        }
+        if(e == 'O') {
+          HTML += `<th title="Обществознание">О</th>`;
+          lgots[e] = [];
+        }
         if(e == 'I') {
-          HTML += `<th title="Информатика и ИКТ">ИКТ</th>`;
+          HTML += `<th title="Информатика">ИКТ</th>`;
+          lgots[e] = [];
+        }
+        if(e == 'B') {
+          HTML += `<th title="Биология">Б</th>`;
+          lgots[e] = [];
+        }
+        if(e == 'G') {
+          HTML += `<th title="География">Г</th>`;
           lgots[e] = [];
         }
         if(e == 'L') {
           HTML += `<th title="Иностранный язык">ИЯ</th>`;
           lgots[e] = [];
         }
+        if(e == 'K') {
+          HTML += `<th title="Литература">Л</th>`;
+          lgots[e] = [];
+        }
+        if(e == 'R') {
+          HTML += `<th title="Русский язык">РЯ</th>`;
+          lgots[e] = [];
+        }
+        if(e == 'M') {
+          HTML += `<th title="Математика (профильная)">М</th>`;
+          lgots[e] = [];
+        }
       }
+
+      for(const list in now) {
+        for(const ol in now[list]) {
+          if(LGOTS[vuz].programs[i].lgots.hasOwnProperty(list) && LGOTS[vuz].programs[i].lgots[list].hasOwnProperty(ol)) {
+            for(const U of LGOTS[vuz].programs[i].lgots[list][ol]) {
+              if((now[list][ol].status == U.status || U.status == "P") && Number(LGOTS[vuz].minClass) <= now[list][ol].class) {
+                lgots[U.predmet].push([U.lgota, ol]);
+              }
+            }
+          }
+        }
+      }
+
+      console.log([vuz,i,lgots]);
       HTML += `<th title="Дополнительные баллы">+</th></tr>`
       lgots["+"] = [];
     }
   }
-  console.log(HTML)
+  console.log(HTML);
 }
