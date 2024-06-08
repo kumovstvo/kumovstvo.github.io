@@ -181,7 +181,8 @@ function updateLgots() {
           if(LGOTS[vuz].programs[i].lgots.hasOwnProperty(list) && LGOTS[vuz].programs[i].lgots[list].hasOwnProperty(ol)) {
             for(const U of LGOTS[vuz].programs[i].lgots[list][ol]) {
               if((now[list][ol].status == U.status || U.status == "P") && Number(LGOTS[vuz].minClass) <= now[list][ol].class) {
-                if(U.predmet == '*') {
+                console.log(U.predmet);
+                if(U.predmet == "*") {
                   for(const j in lgots) {
                     if(j != '+') lgots[j].push([Number(U.lgota), ol])
                   }
