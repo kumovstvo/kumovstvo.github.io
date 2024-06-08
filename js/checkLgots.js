@@ -213,7 +213,7 @@ function updateLgots() {
           else if(mx == 0) HTML += `БВИ</td>`;
         }
       }
-      HTML += `<td>0</td></tr></table></td></tr>`;
+      HTML += `</tr></table></td></tr>`;
     }
     HTML += "</table></div>";
   }
