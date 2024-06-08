@@ -107,13 +107,11 @@ function addAch() {
   let profile = document.getElementById('selectProfile').value;
   let clasS = document.getElementById('selectClass').value;
   let status = document.getElementById('selectStatus').value;
-  let olympLevel = OLYMPS[list][olymp][profile];
-
-  if(list == "*" || olymp == "*" || profile == "*" || clasS == "*" || status == "*" || olympLevel == "*") {
+  if(list == "*" || olymp == "*" || profile == "*" || clasS == "*" || status == "*") {
     alert("Заполните все поля!");
     return;
   }
-
+  let olympLevel = OLYMPS[list][olymp][profile];
   localStorage["ach"] += `${list};${olymp};${profile};${olympLevel};${clasS};${status}|`;
   updateTable();
 }
