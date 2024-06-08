@@ -58,7 +58,8 @@ for(const vuz of vuzs) {
             if(!programs[pr].lgots[list].hasOwnProperty(olymp+` (${profile})`)) programs[pr].lgots[list][olymp+` (${profile})`] = [];
             programs[pr].lgots[list][olymp+` (${profile})`].push({
               status: minStatus,
-              lgota: lg
+              lgota: lg,
+              predmet:predmet
             });
           }
         }
@@ -85,8 +86,7 @@ for(const vuz of vuzs) {
     name: shortName,
     fullName: longName,
     minClass: minClass,
-    programs: programs,
-    predmet: predmet
+    programs: programs
   };
 }
 
