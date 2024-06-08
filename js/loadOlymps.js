@@ -41,7 +41,7 @@ document.querySelector('#selectList').addEventListener('change', function (e) {
   let olymps = OLYMPS[listName];
 
   let I = 0;
-  for(const i of olymps.keys()) {
+  for(const i of olymps) {
     datalistHtml += `<option value="olymp${I}">${i}</option>\n`;
     I++;
   }
