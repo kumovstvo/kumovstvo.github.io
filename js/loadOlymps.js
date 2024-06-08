@@ -1,6 +1,29 @@
-var listNow = NaN;
-var olympNow = NaN;
-var profileNow = NaN;
+const olympLists = ["vsosh.csv","rsosh-20_21.csv", "rsosh-21_22.csv", "rsosh-22_23.csv", "rsosh-23_24.csv"];
+var OLYMPS = {};
+
+for(const list of olympLists) {
+  let mp = new Map();
+  
+
+  let text = loadFile("./res/olymps/"+list).split("\n");
+  let olymps = {}
+  for(let j = 0; j < text.length; ++j) {
+    text[j] = text[j].split(";");
+
+    if(!olymps.hasOwnProperty(text[j][0])) {
+      olymps[text[j][0]] = [];
+    }
+    olymps[text[j][0]].push([text[j][1],text[j][2]]);
+  }
+
+  OLYMPS[list] = olymps;
+}
+
+console.log(OLYMPS)
+
+// var listNow = NaN;
+// var olympNow = NaN;
+// var profileNow = NaN;
 
 function loadFile(filePath) {
   let result = null;
@@ -12,6 +35,8 @@ function loadFile(filePath) {
   }
   return result;
 }
+
+
 
 
 document.querySelector('#selectList').addEventListener('change', function (e) {
