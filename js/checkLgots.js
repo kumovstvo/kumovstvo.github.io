@@ -66,7 +66,7 @@ for(const vuz of vuzs) {
     } else {
       for(const list of olympLists) {
         for(const ol in OLYMPS[list]) {
-          if(OLYMP[list][ol].hasOwnProperty(profile) && Number(OLYMPS[list][olymp][profile]) >= minLevel) {
+          if(OLYMPS[list][ol].hasOwnProperty(profile) && Number(OLYMPS[list][olymp][profile]) >= minLevel) {
             for(const pr of prgrs) {
               if(!programs[pr].lgots.hasOwnProperty(list)) programs[pr].lgots[list] = {};
               if(!programs[pr].lgots[list].hasOwnProperty(olymp+` (${profile})`)) programs[pr].lgots[list][olymp+` (${profile})`] = [];
