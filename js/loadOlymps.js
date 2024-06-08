@@ -79,7 +79,6 @@ function updateTable() {
     <th class="achProfile">Профиль</th>
     <th class="achStatus">Статус</th>
     <th class="achClass">Класс</th>
-    <th class="achYear">Тип</th>
   </tr>
   `;
 
@@ -92,7 +91,6 @@ function updateTable() {
       <td class="achProfile">${text[i][2]}</td>
       <td class="achStatus">${text[i][5]=="P" ? "Призёр" : "Победитель"}</td>
       <td class="achClass">${text[i][4]}</td>
-      <td class="achYear">${text[i][0].slice(0,-4)}</td>
     </tr>`;
   }
   console.log(HTML);
