@@ -189,6 +189,7 @@ function updateLgots() {
                     if(j != '+') lgots[j].push([Number(U.lgota), ol])
                   }
                 } else if(lgots.hasOwnProperty(U.predmet)) lgots[U.predmet].push([Number(U.lgota), ol]);
+                else lgots["+"].push([Number(U.lgota), ol+" (ОШИБКА: Нет предмета для подтверждения БВИ)"]);
               }
             }
           }
