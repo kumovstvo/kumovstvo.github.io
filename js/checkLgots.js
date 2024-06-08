@@ -93,6 +93,8 @@ for(const vuz of vuzs) {
 
 console.log(LGOTS);
 
+updateLgots();
+
 function updateLgots() {
   if(!localStorage.getItem("ach")) localStorage["ach"]="";
   let text = localStorage["ach"].split("|");
@@ -210,7 +212,6 @@ function updateLgots() {
         }
       }
       HTML += `<td>0</td></tr></table></td></tr>`
-      console.log([vuz,i,lgots]);
     }
     HTML += "</div>"
   }

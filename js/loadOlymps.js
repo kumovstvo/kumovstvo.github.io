@@ -20,7 +20,7 @@ for(const list of olympLists) {
   OLYMPS[list] = olymps;
 }
 
-console.log(OLYMPS)
+console.log(OLYMPS);
 
 var listNow = NaN;
 var olympNow = NaN;
@@ -63,7 +63,6 @@ document.querySelector('#selectOlymp').addEventListener('change', function (e) {
     datalistHtml += `<option value="${i}">${i}</option>\n`;
     I++;
   }
-  console.log(datalistHtml);
   
   document.getElementById('selectProfile').innerHTML = datalistHtml;
   olympNow = olympName;
@@ -93,7 +92,6 @@ function updateTable() {
       <td class="achClass">${text[i][4]}</td>
     </tr>`;
   }
-  console.log(HTML);
   document.getElementById('achTable').innerHTML = HTML;
 }
 
