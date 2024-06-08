@@ -48,6 +48,7 @@ document.querySelector('#selectList').addEventListener('change', function (e) {
   }
   
   document.getElementById('selectOlymp').innerHTML = datalistHtml;
+  document.getElementById('selectProfile').innerHTML = "<option disabled selected>Выберите профиль олимпиады</option>";
   listNow = listName;
 });
 
@@ -67,6 +68,10 @@ document.querySelector('#selectOlymp').addEventListener('change', function (e) {
   olympNow = olympName;
 });
 
+function updateTable() {
+
+}
+
 function addAch() {
   let list = document.getElementById('selectList').value;
   let olymp = document.getElementById('selectOlymp').value;
@@ -76,4 +81,5 @@ function addAch() {
   let olympLevel = OLYMPS[list][olymp][profile];
   if(!localStorage.getItem("ach")) localStorage["ach"]="";
   localStorage["ach"] += `${list};${olymp};${profile};${olympLevel};${clasS};${status}|`;
+  updateTable();
 }
