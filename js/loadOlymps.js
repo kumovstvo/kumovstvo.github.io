@@ -36,22 +36,12 @@ function loadFile(filePath) {
   return result;
 }
 
-
-
-
 document.querySelector('#selectList').addEventListener('change', function (e) {
   let listName = e.target.value;
-  
-  let text = loadFile("./res/olymps/"+listName).split("\n");
-  let olymps = new Set();
-  let datalistHtml = "<option disabled selected>Выберите олимпиаду</option>";
-  for(let j = 0; j < text.length; ++j) {
-    text[j] = text[j].split(";");
-    olymps.add(text[j][0]);
-  }
+  let olymps = OLYMPS[listName];
 
   let I = 0;
-  for(const i of olymps) {
+  for(const i of olymps.keys()) {
     datalistHtml += `<option value="olymp${I}">${i}</option>\n`;
     I++;
   }
