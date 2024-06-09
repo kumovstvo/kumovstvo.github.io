@@ -95,6 +95,16 @@ console.log(LGOTS);
 
 updateLgots();
 
+
+function hideVuz(id) {
+  let obj = document.getElementById(id);
+  if(obj.style.display != "table") {
+    obj.style.display = "table";
+  } else {
+    obj.style.display = "none";
+  }
+}
+
 function updateLgots() {
   if(!localStorage.getItem("ach")) localStorage["ach"]="";
   let text = localStorage["ach"].split("|");
@@ -114,8 +124,8 @@ function updateLgots() {
   for(const vuz of vuzs) {
     console.log(vuz);
     HTML += `<div class="lgota">
-    <div class="lgota-vuz-name" title="${LGOTS[vuz].fullName}">${LGOTS[vuz].name}</div>
-    <table class="lgota-table" style="border-collapse: collapse;">`
+    <button class="lgota-vuz-name" onclick="hideVuz('${vuz}')" title="${LGOTS[vuz].fullName}">${LGOTS[vuz].name}</button>
+    <table id="${vuz}" class="lgota-table" style="border-collapse: collapse; display: none;">`
     for(const i in LGOTS[vuz].programs) {
       HTML += `<tr>
             <td class="lgota-programm-number">${i}</td>
