@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "TD Mars"; 
+    src: url("../fonts/TD Mars.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+
 * {
     padding: 0;
     margin: 0;
