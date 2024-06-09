@@ -209,7 +209,8 @@ function updateLgots() {
       HTML += `<tr>`;
       for(const i in lgots) {
         if(lgots[i].length == 0) {
-          HTML += `<td title="Льгот не найдено">-</td>`;
+          if(i == '+') HTML += `<td title="Льгот не найдено">0</td>`
+          else HTML += `<td title="Льгот не найдено">-</td>`;
         } else {
           let mx = -100;
           HTML += `<td title="`
