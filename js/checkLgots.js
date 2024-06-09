@@ -219,7 +219,8 @@ function updateLgots() {
             else if(j[0] == -1) HTML += `100: ${j[1]}\n`;
           }
           HTML += `">`;
-          if(mx == -1) HTML += `100</td>`;
+          if(i == '+') HTML += `0</td>`
+          else if(mx == -1) HTML += `100</td>`;
           else if(mx == 0) HTML += `БВИ</td>`;
         }
       }
