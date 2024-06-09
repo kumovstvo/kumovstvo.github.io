@@ -5,6 +5,34 @@
     font-weight: normal; 
 }
 
+@font-face {
+    font-family: "Nozhik"; 
+    src: url("../fonts/Nozhik.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+
+@font-face {
+    font-family: "USSR Stencil"; 
+    src: url("../fonts/USSR.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+
+@font-face {
+    font-family: "Better VCR"; 
+    src: url("../fonts/BetterVCR.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+
+@font-face {
+    font-family: "Montserrat"; 
+    src: url("../fonts/Montserrat.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+
 * {
     padding: 0;
     margin: 0;
