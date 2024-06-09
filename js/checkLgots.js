@@ -201,7 +201,7 @@ function updateLgots() {
                 } else {
                   for(let UU of U.predmet) {
                     if(lgots.hasOwnProperty(UU)) {
-                      lgots[U.predmet].push([Number(U.lgota), ol]);
+                      lgots[UU].push([Number(U.lgota), ol]);
                     } else {
                       lgots["+"].push([Number(U.lgota), ol+` (ОШИБКА: Нет предмета '${UU}' для подтверждения льготы)`]);
                     }
