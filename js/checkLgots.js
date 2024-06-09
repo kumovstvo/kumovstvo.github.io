@@ -125,7 +125,7 @@ function updateLgots() {
     console.log(vuz);
     HTML += `<div class="lgota">
     <button class="lgota-vuz-name" onclick="hideVuz('${vuz}')" title="${LGOTS[vuz].fullName}">${LGOTS[vuz].name}</button>
-    <table id="${vuz}" class="lgota-table" style="border-collapse: collapse; display: none;">`
+    <table id="${vuz}" class="lgota-table" style="border-collapse: collapse; display: table;">`
     for(const i in LGOTS[vuz].programs) {
       HTML += `<tr>
             <td class="lgota-programm-number">${i}</td>
