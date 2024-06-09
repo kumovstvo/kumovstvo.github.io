@@ -203,7 +203,7 @@ function updateLgots() {
                     if(lgots.hasOwnProperty(UU)) {
                       lgots[U.predmet].push([Number(U.lgota), ol]);
                     } else {
-                      lgots["+"].push([Number(U.lgota), ol+` (ОШИБКА: Нет предмета '${UU}' для подтверждения)`]);
+                      lgots["+"].push([Number(U.lgota), ol+` (ОШИБКА: Нет предмета '${UU}' для подтверждения льготы)`]);
                     }
                   }
                 }
