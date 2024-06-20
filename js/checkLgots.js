@@ -57,8 +57,11 @@ for(const vuz of vuzs) {
           for(const pr of prgrs) {
             console.log(pr)
             if(pr[0] == '#') {
+              console.log("!!!");
               for(let _pg in programs) {
-                if(String(_pg.ege).includes(pr[1])) {
+                console.log(_pg);
+                console.log(programs[_pg]);
+                if(String(programs[_pg].ege).includes(pr[1])) {
                   programs[_pg].lgots[list][olymp+` (${profile})`].push({
                     status: minStatus,
                     lgota: lg,
