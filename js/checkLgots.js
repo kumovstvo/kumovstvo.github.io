@@ -55,10 +55,11 @@ for(const vuz of vuzs) {
         OLYMPS[list][olymp].hasOwnProperty(profile) &&
         Number(OLYMPS[list][olymp][profile]) <= minLevel) {
           for(const pr of prgrs) {
+            console.log(pr)
             if(pr[0] == '#') {
               for(let _pg in programs) {
                 if(String(_pg.ege).includes(pr[1])) {
-                  programs[pr].lgots[list][olymp+` (${profile})`].push({
+                  programs[_pg].lgots[list][olymp+` (${profile})`].push({
                     status: minStatus,
                     lgota: lg,
                     predmet:predmet
