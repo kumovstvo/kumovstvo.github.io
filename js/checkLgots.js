@@ -61,6 +61,8 @@ for(const vuz of vuzs) {
               for(let _pg in programs) {
                 console.log(_pg);
                 console.log(programs[_pg]);
+                if(!programs[pr].lgots.hasOwnProperty(list)) programs[pr].lgots[list] = {};
+                if(!programs[pr].lgots[list].hasOwnProperty(olymp+` (${profile})`)) programs[pr].lgots[list][olymp+` (${profile})`] = [];
                 if(String(programs[_pg].ege).includes(pr[1])) {
                   programs[_pg].lgots[list][olymp+` (${profile})`].push({
                     status: minStatus,
