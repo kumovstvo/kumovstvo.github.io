@@ -9,7 +9,7 @@ function loadFile(filePath) {
   return result;
 }
 
-const vuzs = ["itmo.csv", "mfti.csv", "mrgu.csv", "leti.csv", "misis.csv"];
+const vuzs = ["bmstu.csv","itmo.csv", "mfti.csv", "mrgu.csv", "leti.csv", "misis.csv"];
 var LGOTS = {};
 
 for(const vuz of vuzs) {
@@ -54,6 +54,17 @@ for(const vuz of vuzs) {
         OLYMPS[list][olymp].hasOwnProperty(profile) &&
         Number(OLYMPS[list][olymp][profile]) <= minLevel) {
           for(const pr of prgrs) {
+            if(pr[0] == '#') {
+              for(let _pg of programs.keys()) {
+                if(String(_pg.ege).includes(pr[1])) {
+                  programs[pr].lgots[list][olymp+` (${profile})`].push({
+                    status: minStatus,
+                    lgota: lg,
+                    predmet:predmet
+                  });
+                }
+              }
+            }
             if(!programs[pr].lgots.hasOwnProperty(list)) programs[pr].lgots[list] = {};
             if(!programs[pr].lgots[list].hasOwnProperty(olymp+` (${profile})`)) programs[pr].lgots[list][olymp+` (${profile})`] = [];
             programs[pr].lgots[list][olymp+` (${profile})`].push({
