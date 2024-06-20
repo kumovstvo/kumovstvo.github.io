@@ -35,7 +35,6 @@ for(const vuz of vuzs) {
       programs[text[i][0]].lgots = {};
     }
   }
-  console.log(typeof(programs));
 
   for(;i < text.length; ++i) {
     text[i] = text[i].split(";");
@@ -55,13 +54,10 @@ for(const vuz of vuzs) {
         OLYMPS[list][olymp].hasOwnProperty(profile) &&
         Number(OLYMPS[list][olymp][profile]) <= minLevel) {
           for(const pr of prgrs) {
-            console.log(pr)
             if(pr[0] == '-') {
               for(let _pg in programs) {
                 if(programs[_pg].code == pr.slice(1)) {
-                  console.log("!!!");
                   for(const jj in programs[_pg].lgots[list][olymp+` (${profile})`]) {
-                    console.log(jj);console.log(jj.lgota);
                     if(programs[_pg].lgots[list][olymp+` (${profile})`][jj].lgota == lg) {
                       programs[_pg].lgots[list][olymp+` (${profile})`].splice(jj,1);
                       break;
@@ -161,7 +157,6 @@ function updateLgots() {
 
   let HTML = "";
   for(const vuz of vuzs) {
-    console.log(vuz);
     HTML += `<div class="lgota">
     <button class="lgota-vuz-name" onclick="hideVuz('${vuz}')" title="${LGOTS[vuz].fullName}">${LGOTS[vuz].name}</button>
     <table id="${vuz}" class="lgota-table" style="border-collapse: collapse; display: none;">`
@@ -275,6 +270,5 @@ function updateLgots() {
     }
     HTML += "</table></div>";
   }
-  console.log(HTML);
   document.getElementById('ZZZ').innerHTML = HTML;
 }
