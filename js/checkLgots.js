@@ -59,10 +59,8 @@ for(const vuz of vuzs) {
             if(pr[0] == '#') {
               console.log("!!!");
               for(let _pg in programs) {
-                console.log(_pg);
-                console.log(programs[_pg]);
-                if(!programs[pr].lgots.hasOwnProperty(list)) programs[pr].lgots[list] = {};
-                if(!programs[pr].lgots[list].hasOwnProperty(olymp+` (${profile})`)) programs[pr].lgots[list][olymp+` (${profile})`] = [];
+                if(!programs[_pg].lgots.hasOwnProperty(list)) programs[_pg].lgots[list] = {};
+                if(!programs[_pg].lgots[list].hasOwnProperty(olymp+` (${profile})`)) programs[_pg].lgots[list][olymp+` (${profile})`] = [];
                 if(String(programs[_pg].ege).includes(pr[1])) {
                   programs[_pg].lgots[list][olymp+` (${profile})`].push({
                     status: minStatus,
