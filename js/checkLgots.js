@@ -35,6 +35,7 @@ for(const vuz of vuzs) {
       programs[text[i][0]].lgots = {};
     }
   }
+  console.log(typeof(programs));
 
   for(;i < text.length; ++i) {
     text[i] = text[i].split(";");
