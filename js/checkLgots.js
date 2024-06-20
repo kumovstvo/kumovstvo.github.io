@@ -60,10 +60,10 @@ for(const vuz of vuzs) {
               for(let _pg in programs) {
                 if(programs[_pg].code == pr.slice(1)) {
                   console.log("!!!");
-                  for(const jj of programs[_pg].lgots[list][olymp+` (${profile})`]) {
+                  for(const jj in programs[_pg].lgots[list][olymp+` (${profile})`]) {
                     console.log(jj);console.log(jj.lgota);
-                    if(jj.lgota == lg) {
-                      delete jj;
+                    if(programs[_pg].lgots[list][olymp+` (${profile})`][jj].lgota == lg) {
+                      delete programs[_pg].lgots[list][olymp+` (${profile})`][jj].lgota;
                       break;
                     }
                   }
