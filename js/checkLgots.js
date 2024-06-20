@@ -56,8 +56,18 @@ for(const vuz of vuzs) {
         Number(OLYMPS[list][olymp][profile]) <= minLevel) {
           for(const pr of prgrs) {
             console.log(pr)
-            if(pr[0] == '#') {
-              console.log("!!!");
+            if(pr[0] == '-') {
+              for(let _pg in programs) {
+                if(programs[_pg].code == pr.slice(1)) {
+                  for(const jj of programs[_pg].lgots[list][olymp+` (${profile})`]) {
+                    if(jj.lgota == lg) {
+                      delete jj;
+                      break;
+                    }
+                  }
+                }
+              }
+            } else if(pr[0] == '#') {
               for(let _pg in programs) {
                 if(!programs[_pg].lgots.hasOwnProperty(list)) programs[_pg].lgots[list] = {};
                 if(!programs[_pg].lgots[list].hasOwnProperty(olymp+` (${profile})`)) programs[_pg].lgots[list][olymp+` (${profile})`] = [];
