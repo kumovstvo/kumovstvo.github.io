@@ -63,7 +63,7 @@ for(const vuz of vuzs) {
                   for(const jj in programs[_pg].lgots[list][olymp+` (${profile})`]) {
                     console.log(jj);console.log(jj.lgota);
                     if(programs[_pg].lgots[list][olymp+` (${profile})`][jj].lgota == lg) {
-                      delete programs[_pg].lgots[list][olymp+` (${profile})`][jj];
+                      programs[_pg].lgots[list][olymp+` (${profile})`].splice(jj,1);
                       break;
                     }
                   }
