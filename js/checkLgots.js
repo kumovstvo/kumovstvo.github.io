@@ -59,7 +59,9 @@ for(const vuz of vuzs) {
             if(pr[0] == '-') {
               for(let _pg in programs) {
                 if(programs[_pg].code == pr.slice(1)) {
+                  console.log("!!!");
                   for(const jj of programs[_pg].lgots[list][olymp+` (${profile})`]) {
+                    console.log(jj);console.log(jj.lgota);
                     if(jj.lgota == lg) {
                       delete jj;
                       break;
