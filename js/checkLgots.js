@@ -9,7 +9,7 @@ function loadFile(filePath) {
   return result;
 }
 
-const vuzs = ["mephi.csv", "bmstu.csv", "itmo.csv", "mfti.csv", "mrgu.csv", "leti.csv", "misis.csv"];
+const vuzs = ["bmstu.csv", "itmo.csv", "mfti.csv", "mrgu.csv", "leti.csv", "misis.csv"];
 var LGOTS = {};
 
 for(const vuz of vuzs) {
@@ -57,22 +57,22 @@ for(const vuz of vuzs) {
             if(pr[0] == '-') {
               for(let _pg in programs) {
                 if(programs[_pg].code == pr.slice(1)) {
-                  programs[_pg].lgots[list][olymp+` (${profile})`].push({
-                    status: minStatus,
-                    lgota: lg,
-                    predmet:predmet
-                  });
-                }
-              }
-            } else if(pr[0] == '+') {
-              for(let _pg in programs) {
-                if(programs[_pg].code == pr.slice(1)) {
                   for(const jj in programs[_pg].lgots[list][olymp+` (${profile})`]) {
                     if(programs[_pg].lgots[list][olymp+` (${profile})`][jj].lgota == lg) {
                       programs[_pg].lgots[list][olymp+` (${profile})`].splice(jj,1);
                       break;
                     }
                   }
+                }
+              }
+            } else if(pr[0] == '+') {
+              for(let _pg in programs) {
+                if(programs[_pg].code == pr.slice(1)) {
+                  programs[_pg].lgots[list][olymp+` (${profile})`].push({
+                    status: minStatus,
+                    lgota: lg,
+                    predmet:predmet
+                  });
                 }
               }
             } else if(pr[0] == '#') {
