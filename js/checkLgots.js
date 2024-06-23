@@ -49,13 +49,11 @@ for(const vuz of vuzs) {
     let predmet = text[i][5];
 
     if(olymp != "*") {
-      console.log(`I ${i}`);
       for(const list of olympLists) {
         if(OLYMPS[list].hasOwnProperty(olymp) &&
         OLYMPS[list][olymp].hasOwnProperty(profile) &&
         Number(OLYMPS[list][olymp][profile]) <= minLevel) {
           for(const pr of prgrs) {
-            console.log(pr);
             if(pr[0] == '-') {
               for(let _pg in programs) {
                 if(programs[_pg].code == pr.slice(1)) {
@@ -118,15 +116,62 @@ for(const vuz of vuzs) {
         for(const ol in OLYMPS[list]) {
           if(OLYMPS[list][ol].hasOwnProperty(profile) && Number(OLYMPS[list][ol][profile]) <= minLevel) {
             for(const pr of prgrs) {
-              console.log(prgrs);
-              console.log(pr);
-              if(!programs[pr].lgots.hasOwnProperty(list)) programs[pr].lgots[list] = {};
-              if(!programs[pr].lgots[list].hasOwnProperty(ol+` (${profile})`)) programs[pr].lgots[list][ol+` (${profile})`] = [];
-              programs[pr].lgots[list][ol+` (${profile})`].push({
-                status: minStatus,
-                lgota: lg,
-                predmet:predmet
-              });
+              if(pr[0] == '*') {
+                for(let _pg in programs) {
+                  if(!programs[_pg].lgots.hasOwnProperty(list)) programs[_pg].lgots[list] = {};
+                  if(!programs[_pg].lgots[list].hasOwnProperty(ol+` (${profile})`)) programs[_pg].lgots[list][ol+` (${profile})`] = [];
+                  programs[_pg].lgots[list][ol+` (${profile})`].push({
+                    status: minStatus,
+                    lgota: lg,
+                    predmet:predmet
+                  });
+                }
+              } else if(pr[0] == '-') {
+                for(let _pg in programs) {
+                  if(programs[_pg].code == pr.slice(1)) {
+                    if(!programs[_pg].lgots.hasOwnProperty(list)) programs[_pg].lgots[list] = {};
+                    if(!programs[_pg].lgots[list].hasOwnProperty(ol+` (${profile})`)) programs[_pg].lgots[list][ol+` (${profile})`] = [];
+                    for(const jj in programs[_pg].lgots[list][ol+` (${profile})`]) {
+                      if(programs[_pg].lgots[list][ol+` (${profile})`][jj].lgota == lg) {
+                        programs[_pg].lgots[list][ol+` (${profile})`].splice(jj,1);
+                        break;
+                      }
+                    }
+                  }
+                }
+              } else if(pr[0] == '#') {
+                for(let _pg in programs) {
+                  if(String(programs[_pg].ege).includes(pr[1])) {
+                    if(!programs[_pg].lgots.hasOwnProperty(list)) programs[_pg].lgots[list] = {};
+                    if(!programs[_pg].lgots[list].hasOwnProperty(ol+` (${profile})`)) programs[_pg].lgots[list][ol+` (${profile})`] = [];
+                    programs[_pg].lgots[list][ol+` (${profile})`].push({
+                      status: minStatus,
+                      lgota: lg,
+                      predmet:predmet
+                    });
+                  }
+                }
+              } else if(pr[0] == '+') {
+                for(let _pg in programs) {
+                  if(programs[_pg].code == pr.slice(1)) {
+                    if(!programs[_pg].lgots.hasOwnProperty(list)) programs[_pg].lgots[list] = {};
+                    if(!programs[_pg].lgots[list].hasOwnProperty(ol+` (${profile})`)) programs[_pg].lgots[list][ol+` (${profile})`] = [];
+                    programs[_pg].lgots[list][ol+` (${profile})`].push({
+                      status: minStatus,
+                      lgota: lg,
+                      predmet:predmet
+                    });
+                  }
+                }
+              } else {
+                if(!programs[pr].lgots.hasOwnProperty(list)) programs[pr].lgots[list] = {};
+                if(!programs[pr].lgots[list].hasOwnProperty(ol+` (${profile})`)) programs[pr].lgots[list][ol+` (${profile})`] = [];
+                programs[pr].lgots[list][ol+` (${profile})`].push({
+                  status: minStatus,
+                  lgota: lg,
+                  predmet:predmet
+                });
+              }
             }
           }
         }
