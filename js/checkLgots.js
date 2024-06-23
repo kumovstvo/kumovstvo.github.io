@@ -9,7 +9,7 @@ function loadFile(filePath) {
   return result;
 }
 
-const vuzs = ["mpei.csv","mephi.csv", "bmstu.csv", "itmo.csv", "mfti.csv", "mrgu.csv", "leti.csv", "misis.csv"];
+const vuzs = ["mtuci.csv", "mpei.csv", "mephi.csv", "bmstu.csv", "itmo.csv", "mfti.csv", "mrgu.csv", "leti.csv", "misis.csv"];
 var LGOTS = {};
 
 for(const vuz of vuzs) {
