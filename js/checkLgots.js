@@ -102,7 +102,6 @@ for(const vuz of vuzs) {
                 });
               }
             } else {
-              console.log(prgrs);
               if(!programs[pr].lgots.hasOwnProperty(list)) programs[pr].lgots[list] = {};
               if(!programs[pr].lgots[list].hasOwnProperty(olymp+` (${profile})`)) programs[pr].lgots[list][olymp+` (${profile})`] = [];
               programs[pr].lgots[list][olymp+` (${profile})`].push({
@@ -115,6 +114,7 @@ for(const vuz of vuzs) {
         }
       } 
     } else {
+      console.log(prgrs);
       for(const list of olympLists) {
         for(const ol in OLYMPS[list]) {
           if(OLYMPS[list][ol].hasOwnProperty(profile) && Number(OLYMPS[list][ol][profile]) <= minLevel) {
