@@ -69,6 +69,8 @@ for(const vuz of vuzs) {
             } else if(pr[0] == '+') {
               for(let _pg in programs) {
                 if(programs[_pg].code == pr.slice(1)) {
+                  if(!programs[_pg].lgots.hasOwnProperty(list)) programs[_pg].lgots[list] = {};
+                  if(!programs[_pg].lgots[list].hasOwnProperty(olymp+` (${profile})`)) programs[_pg].lgots[list][olymp+` (${profile})`] = [];
                   programs[_pg].lgots[list][olymp+` (${profile})`].push({
                     status: minStatus,
                     lgota: lg,
