@@ -49,6 +49,7 @@ for(const vuz of vuzs) {
     let predmet = text[i][5];
 
     if(olymp != "*") {
+      console.log(`I ${i}`);
       for(const list of olympLists) {
         if(OLYMPS[list].hasOwnProperty(olymp) &&
         OLYMPS[list][olymp].hasOwnProperty(profile) &&
