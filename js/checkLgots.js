@@ -56,7 +56,8 @@ for(const vuz of vuzs) {
           for(const pr of prgrs) {
             if(pr[0] == '-') {
               for(let _pg in programs) {
-                if(programs[_pg].code == pr.slice(1)) {
+                let zVz = programs[_pg].code.split(", ");
+                if(zVz.includes(pr.slice(1))) {
                   for(const jj in programs[_pg].lgots[list][olymp+` (${profile})`]) {
                     if(programs[_pg].lgots[list][olymp+` (${profile})`][jj].lgota == lg) {
                       programs[_pg].lgots[list][olymp+` (${profile})`].splice(jj,1);
@@ -67,7 +68,8 @@ for(const vuz of vuzs) {
               }
             } else if(pr[0] == '+') {
               for(let _pg in programs) {
-                if(programs[_pg].code == pr.slice(1)) {
+                let zVz = programs[_pg].code.split(", ");
+                if(zVz.includes(pr.slice(1))) {
                   if(!programs[_pg].lgots.hasOwnProperty(list)) programs[_pg].lgots[list] = {};
                   if(!programs[_pg].lgots[list].hasOwnProperty(olymp+` (${profile})`)) programs[_pg].lgots[list][olymp+` (${profile})`] = [];
                   programs[_pg].lgots[list][olymp+` (${profile})`].push({
@@ -128,7 +130,8 @@ for(const vuz of vuzs) {
                 }
               } else if(pr[0] == '-') {
                 for(let _pg in programs) {
-                  if(programs[_pg].code == pr.slice(1)) {
+                  let zVz = programs[_pg].code.split(", ");
+                  if(zVz.includes(pr.slice(1))) {
                     if(!programs[_pg].lgots.hasOwnProperty(list)) programs[_pg].lgots[list] = {};
                     if(!programs[_pg].lgots[list].hasOwnProperty(ol+` (${profile})`)) programs[_pg].lgots[list][ol+` (${profile})`] = [];
                     for(const jj in programs[_pg].lgots[list][ol+` (${profile})`]) {
@@ -153,7 +156,8 @@ for(const vuz of vuzs) {
                 }
               } else if(pr[0] == '+') {
                 for(let _pg in programs) {
-                  if(programs[_pg].code == pr.slice(1)) {
+                  let zVz = programs[_pg].code.split(", ");
+                  if(zVz.includes(pr.slice(1))) {
                     if(!programs[_pg].lgots.hasOwnProperty(list)) programs[_pg].lgots[list] = {};
                     if(!programs[_pg].lgots[list].hasOwnProperty(ol+` (${profile})`)) programs[_pg].lgots[list][ol+` (${profile})`] = [];
                     programs[_pg].lgots[list][ol+` (${profile})`].push({
