@@ -188,6 +188,7 @@ function updateLgots() {
               <table class="lgota-programm-lgota">
                 <tr>`;
       let lgots = {};
+      console.log(vuz,i);
       for(const e of LGOTS[vuz].programs[i].ege) {
         if(e == 'F') {
           HTML += `<th title="Физика">Ф</th>`;
