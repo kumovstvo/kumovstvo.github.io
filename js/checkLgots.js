@@ -9,7 +9,7 @@ function loadFile(filePath) {
   return result;
 }
 
-const vuzs = ["mai.csv", "stankin.csv","mtuci.csv", "mpei.csv", "mephi.csv", "bmstu.csv", "itmo.csv", "mfti.csv", "mrgu.csv", "leti.csv", "misis.csv"];
+const vuzs = ["mai.csv", "urfu.csv", "stankin.csv","mtuci.csv", "mpei.csv", "mephi.csv", "bmstu.csv", "itmo.csv", "mfti.csv", "mrgu.csv", "leti.csv", "misis.csv"];
 var LGOTS = {};
 
 for(const vuz of vuzs) {
@@ -102,6 +102,7 @@ for(const vuz of vuzs) {
                 });
               }
             } else {
+              console.log(pr)
               if(!programs[pr].lgots.hasOwnProperty(list)) programs[pr].lgots[list] = {};
               if(!programs[pr].lgots[list].hasOwnProperty(olymp+` (${profile})`)) programs[pr].lgots[list][olymp+` (${profile})`] = [];
               programs[pr].lgots[list][olymp+` (${profile})`].push({
