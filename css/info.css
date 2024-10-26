@@ -1,0 +1,22 @@
+.infoTable th {
+    border-bottom: 3px solid black;
+}
+
+.infoTable td {
+    border-bottom: 1px solid black;
+}
+
+.infoTable {
+    width:100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.infoVUZ {
+    width: calc((100% - 225px)*0.3);
+}
+
+.infoInfo, .infoStatus {
+    width: calc((100% - 225px)*0.35);
+}
