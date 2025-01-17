@@ -1,0 +1,86 @@
+#addAch {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  padding: 10px 30px;
+  
+
+  border-radius: 40px;
+  border-style: solid;
+  border-color: #289e5d;
+  border-width: 3px;
+}
+
+#addAchTitle {
+  width: 100%;
+  
+  text-align: center;
+
+  margin: 0 auto;
+  font-family: "Arial";
+  font-size: 40px;
+  line-height: 70px;
+  color: black;
+}
+
+.achFieldTitle {
+  display: block;
+  width: fit-content;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-family: Arial;
+  color:  #999999;
+}
+
+.achFieldSelect {
+  background-color: white;
+  border-style: solid;
+  border-color: #CCCCCC;
+  border-radius: 8px;
+  border-width: 1px;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 22px;
+  color: #1A1A1A;
+  height: 56px;
+  width: 100%;
+}
+
+.achField {
+  display: inline-block;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  min-width: 300px; 
+  max-width: 300px; 
+}
+
+.achButtonField {
+  display: block;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.achButton {
+  background-color: white;
+  border-style: solid;
+  border-color: #CCCCCC;
+  border-radius: 8px;
+  border-width: 1px;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 22px;
+  color: #1A1A1A;
+  height: 56px;
+  padding: 0px 40px;
+}
+
+.achButton:hover {
+  background-color: #CCCCCC;
+}
+
+.achButton:active {
+  background-color: #CCCCCC;
+  border-color: #289e5d;
+}

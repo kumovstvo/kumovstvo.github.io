@@ -1,0 +1,11 @@
+#footer {
+  padding: 24px 32px;
+  background-color: #ebeff3;
+}
+
+#footerTitle {
+  font-size: 18px;
+  line-height: 24px;
+  font-family: Golos Text,Arial,Helvetica,sans-serif;
+  font-weight: 600;
+}

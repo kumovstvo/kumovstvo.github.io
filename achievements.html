@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Достижения | Кумовство</title>
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/header.css">
+  <link rel="stylesheet" type="text/css" href="./css/footer.css">
+  <link rel="stylesheet" type="text/css" href="./css/achievments.css">
+  <script src="js/achievments.js"></script>
+</head>
+<body id="root">
+  <script src="js/genHeader.js"></script>
+  <div id="content" style="min-height:1000px">
+    <div id="addAch">
+      <h2 id="addAchTitle"> <span>Добавить достижение</span></h2>
+      <form onsubmit="return false;">
+        <div class="achField">
+          <label class="achFieldTitle">Тип достижения</label>
+          <select class="achFieldSelect" id="achType">
+            <option value="*" disabled selected></option>
+            <option value="VsOSH">ВсОШ</option>
+            <option value="RSOSH-24_25">РСОШ 2024-25 уч.г.</option>
+            <option value="RSOSH-23_24">РСОШ 2023-24 уч.г.</option>
+            <option value="RSOSH-22_23">РСОШ 2022-23 уч.г.</option>
+            <option value="RSOSH-21_22">РСОШ 2021-22 уч.г.</option>
+            <option value="RSOSH-20_21">РСОШ 2020-21 уч.г.</option>
+            <option value="Other">Другое</option>
+          </select>
+        </div>
+        <div class="achField">
+          <label class="achFieldTitle">Статус</label>
+          <select class="achFieldSelect" id="achStatus">
+            <option value="*" disabled selected></option>
+            <option value="W">Победитель</option>
+            <option value="P">Призёр</option>
+            <option value="M">Участник</option>
+          </select>
+        </div>
+        <div class="achField">
+          <label class="achFieldTitle">Класс</label>
+          <select class="achFieldSelect" id="achGrade">
+            <option value="*" disabled selected></option>
+            <option value="11">11</option>
+            <option value="10">10</option>
+            <option value="9">9</option>
+          </select>
+        </div>
+        <div class="achField" style="max-width: 60%;">
+          <label class="achFieldTitle">Олимпиада</label>
+          <select class="achFieldSelect" id="achOlymp">
+            <option value="*" disabled selected></option>
+          </select>
+        </div>
+        <div class="achField" style="max-width: 35%;">
+          <label class="achFieldTitle">Профиль</label>
+          <select class="achFieldSelect" id="achProfile">
+            <option value="*" disabled selected></option>
+          </select>
+        </div>
+        <div class="achButtonField"> 
+          <button class="achButton" onclick="addAchievment()">Добавить</button>
+        </div>
+      </form>
+    </div>
+      
+  </div>
+  <script src="js/genFooter.js"></script>
+</body>
+</html>
