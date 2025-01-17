@@ -27,7 +27,8 @@ function addAchievment() {
     return;
   }
 
-  localStorage["achs"] += `${type};${status};${grade};${olymp};${profile}|`;
+  let level = OLYMPS[type][olymp][profile];
+  localStorage["achs"] += `${type};${status};${grade};${olymp};${profile};${level}|`;
   addAchievmentFormClean();
   alert("Достижение добавлено");
 }
