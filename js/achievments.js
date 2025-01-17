@@ -1,3 +1,16 @@
+function selectElement(id, valueToSelect) {    
+  let element = document.getElementById(id);
+  element.value = valueToSelect;
+}
+
+function addAchievmentFormClean() {
+  selectElement("achType", "*");
+  selectElement("achStatus", "*");
+  selectElement("achGrade", "*");
+  selectElement("achOlymp", "*");
+  selectElement("achProfile", "*");
+}
+
 function addAchievment() {
   if(!localStorage.getItem("achs")) localStorage["achs"]="";
 
@@ -13,4 +26,6 @@ function addAchievment() {
   }
 
   localStorage["achs"] += `${type};${status};${grade};${olymp};${profile}|`;
+  addAchievmentFormClean();
+  alert("Достижение добавлено");
 }
