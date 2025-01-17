@@ -42,15 +42,15 @@ function loadAchievments() {
     text[i] = text[i].split(";");
     if(text[i].length != 6) continue;
     HTML += `
-    <div class="achievment ${status}Ach">
-      <span class="achTitle">${olymp}</span>
-      <span class="achList">${type}</span>
+    <div class="achievment ${text[i][1]}Ach">
+      <span class="achTitle">${text[i][3]}</span>
+      <span class="achList">${text[i][0]}</span>
       <span class="achSeparator">&#183;</span>
-      <span class="achProfile">${profile}</span>
+      <span class="achProfile">${text[i][4]}</span>
       &#183;
-      <span class="achGrade">${grade} класс</span>
+      <span class="achGrade">${text[i][2]} класс</span>
       &#183;
-      <span class="achStatus">${status == "W" ? "Победитель" : (status == "P" ? "Призёр" : "Участник")}</span>
+      <span class="achStatus">${text[i][1] == "W" ? "Победитель" : (text[i][1] == "P" ? "Призёр" : "Участник")}</span>
       &#183;
       <button class="achDelete">Удалить</button>
     </div>
