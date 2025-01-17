@@ -1,4 +1,3 @@
-var OLYMPS = {};
 var olympLists = [
   "rsosh-24_25.csv"
 ];
@@ -15,6 +14,7 @@ function getFileText(filePath) {
 }
 
 function loadOlymps() {
+  let olymps = {};
   for(const l of olympLists) {
     let text = getFileText("./res/olymps/"+l).split('\n');
 
@@ -27,12 +27,12 @@ function loadOlymps() {
       now[text[i][0]][text[i][1]] = text[i][2];
     }
 
-    OLYMPS[l] = now;
+    olymps[l] = now;
   }
+  return olymps;
 }
 
-
 console.log("Start loading olymps...");
-loadOlymps();
+var OLYMPS = vatloadOlymps();
 console.log("Loaded:");
 console.log(OLYMPS);

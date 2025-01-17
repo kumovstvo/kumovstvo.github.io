@@ -29,3 +29,31 @@ function addAchievment() {
   addAchievmentFormClean();
   alert("Достижение добавлено");
 }
+
+document.querySelector('#achType').addEventListener('change', function (e) {
+  let listName = document.getElementById("achType").value;
+  let olymps = OLYMPS[listName];
+
+  let optionsHTML = `<option value="*" disabled selected></option>`;
+  for(const i in olymps) {
+    optionsHTML += `<option value="${i}">${i}</option>\n`;
+  }
+  
+  document.getElementById('achOlymp').innerHTML = optionsHTML;
+  document.getElementById('achProfile').innerHTML = `<option value="*" disabled selected></option>`;
+});
+
+document.querySelector('#achOlymp').addEventListener('change', function (e) {
+  let listName = document.getElementById("achType").value;
+  let olympName = document.getElementById("achOlymp").value;
+  let profiles = OLYMPS[listName][olympName];
+
+  let I = 0;
+  let optionsHTML = `<option value="*" disabled selected></option>`;
+  for(const i in profiles) {
+    optionsHTML += `<option value="${i}">${i}</option>\n`;
+    I++;
+  }
+  
+  document.getElementById('achProfile').innerHTML = optionsHTML;
+});
