@@ -86,3 +86,5 @@ document.querySelector('#achOlymp').addEventListener('change', function (e) {
   
   document.getElementById('achProfile').innerHTML = optionsHTML;
 });
+
+loadAchievments();
