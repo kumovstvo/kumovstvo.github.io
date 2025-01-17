@@ -56,6 +56,7 @@ function loadAchievments() {
     </div>
     `;
   }
+  document.getElementById('achievments').innerHTML = HTML;
 }
 
 document.querySelector('#achType').addEventListener('change', function (e) {
