@@ -9,6 +9,8 @@ function addAchievmentFormClean() {
   selectElement("achGrade", "*");
   selectElement("achOlymp", "*");
   selectElement("achProfile", "*");
+  document.getElementById('achProfile').innerHTML = `<option value="*" disabled selected></option>`;
+  document.getElementById('achOlymp').innerHTML = `<option value="*" disabled selected></option>`;
 }
 
 function addAchievment() {
