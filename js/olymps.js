@@ -16,7 +16,7 @@ function getFileText(filePath) {
 
 function loadOlymps() {
   for(const l of olympLists) {
-    let text = getFileText("./res/olymps/"+list).split('\n');
+    let text = getFileText("./res/olymps/"+l).split('\n');
 
     let now = {};
     for(let i = 0; i < text.length; ++i) {
