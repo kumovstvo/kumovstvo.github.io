@@ -33,6 +33,6 @@ function loadOlymps() {
 }
 
 console.log("Start loading olymps...");
-var OLYMPS = vatloadOlymps();
+var OLYMPS = loadOlymps();
 console.log("Loaded:");
 console.log(OLYMPS);
