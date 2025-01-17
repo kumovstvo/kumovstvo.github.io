@@ -27,8 +27,8 @@
             <option value="rsosh-20_21.csv">РСОШ 2020-21 уч.г.</option>
             <option value="Other">Другое</option>
           </select>
-        </div>
-        <div class="achField">
+        </div><!--  
+        --><div class="achField">
           <label class="achFieldTitle">Статус</label>
           <select class="achFieldSelect" id="achStatus">
             <option value="*" disabled selected></option>
@@ -36,8 +36,8 @@
             <option value="P">Призёр</option>
             <option value="M">Участник</option>
           </select>
-        </div>
-        <div class="achField">
+        </div><!--  
+        --><div class="achField">
           <label class="achFieldTitle">Класс</label>
           <select class="achFieldSelect" id="achGrade">
             <option value="*" disabled selected></option>
@@ -45,14 +45,14 @@
             <option value="10">10</option>
             <option value="9">9</option>
           </select>
-        </div>
-        <div class="achField" style="max-width: 60%;">
+        </div><!--  
+        --><div class="achField" style="max-width: 60%;">
           <label class="achFieldTitle">Олимпиада</label>
           <select class="achFieldSelect" id="achOlymp">
             <option value="*" disabled selected></option>
           </select>
-        </div>
-        <div class="achField" style="max-width: 35%;">
+        </div><!--  
+        --><div class="achField" style="max-width: 35%;">
           <label class="achFieldTitle">Профиль</label>
           <select class="achFieldSelect" id="achProfile">
             <option value="*" disabled selected></option>
@@ -63,6 +63,21 @@
         </div>
       </form>
       <script src="js/achievments.js"></script>
+    </div>
+    
+    <div id="achievments"> 
+      <div class="achievment prizerAch">
+        <span class="achTitle">Открытая олимпиада школьников</span>
+        <span class="achList">РСОШ 2021-22</span>
+        <span class="achSeparator">&#183;</span>
+        <span class="achProfile">Информатика</span>
+        &#183;
+        <span class="achGrade">9 класс</span>
+        &#183;
+        <span class="achStatus">Победитель</span>
+        &#183;
+        <button class="achDelete">Удалить</button>
+      </div>
     </div>
   </div>
   <script src="js/genFooter.js"></script>

@@ -3,7 +3,6 @@
   margin: 0 auto;
   margin-bottom: 30px;
   padding: 10px 30px;
-  
 
   border-radius: 40px;
   border-style: solid;
@@ -29,7 +28,7 @@
   margin-bottom: 8px;
   font-size: 14px;
   font-family: Arial;
-  color:  #999999;
+  color: #999999;
 }
 
 .achFieldSelect {
@@ -48,7 +47,7 @@
 
 .achField {
   display: inline-block;
-  padding-right: 20px;
+  padding-right: 25px;
   padding-bottom: 20px;
   min-width: 300px; 
   max-width: 300px; 
@@ -83,4 +82,60 @@
 .achButton:active {
   background-color: #CCCCCC;
   border-color: #289e5d;
+}
+
+.achievment {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  padding: 10px 30px;
+
+  border-radius: 40px;
+  border-style: solid;
+  border-color: #289e5d;
+  border-width: 3px;
+}
+
+.WAch {
+  border-color: #d4ba2b;
+}
+.PAch {
+  border-color: #c0c0c0;
+}
+.MAch {
+  border-color: #B87333;
+}
+
+.achTitle {
+  display: block;
+  width: 100%;
+  font-family: Montserrat;
+  font-size: 35px;
+}
+
+.achList, .achProfile, .achGrade, .achStatus, .achSeparator {
+  display: inline-block;
+  font-family: Montserrat;
+  font-size: 15px;
+}
+
+.achDelete {
+  background-color: white;
+  border-style: solid;
+  border-color: #CCCCCC;
+  border-radius: 8px;
+  border-width: 1px;
+  padding: 10px;
+  font-size: 15px;
+  color: #1A1A1A;
+  padding: 0px 10px;
+}
+
+.achDelete:hover {
+  background-color: #CCCCCC;
+}
+
+.achDelete:active {
+  background-color: #CCCCCC;
+  border-color: red;
 }

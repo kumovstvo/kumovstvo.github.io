@@ -33,6 +33,31 @@ function addAchievment() {
   alert("Достижение добавлено");
 }
 
+function loadAchievments() {
+  let text = localStorage["achs"].split('|');
+
+  let HTML = ``;
+
+  for(let i = 0; i < text.length; ++i) {
+    text[i] = text[i].split(";");
+    if(text[i].length != 6) continue;
+    HTML += `
+    <div class="achievment ${status}Ach">
+      <span class="achTitle">${olymp}</span>
+      <span class="achList">${type}</span>
+      <span class="achSeparator">&#183;</span>
+      <span class="achProfile">${profile}</span>
+      &#183;
+      <span class="achGrade">${grade} класс</span>
+      &#183;
+      <span class="achStatus">${status == "W" ? "Победитель" : (status == "P" ? "Призёр" : "Участник")}</span>
+      &#183;
+      <button class="achDelete">Удалить</button>
+    </div>
+    `;
+  }
+}
+
 document.querySelector('#achType').addEventListener('change', function (e) {
   let listName = document.getElementById("achType").value;
   let olymps = OLYMPS[listName];
