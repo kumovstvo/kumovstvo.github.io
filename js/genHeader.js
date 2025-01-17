@@ -1,15 +1,15 @@
 let headerItems = [
   {
     text: "Проверка льгот",
-    href: "/check25/"
+    href: "/check25"
   },
   {
     text: "Достижения",
-    href: "/achievements/"
+    href: "/achievements"
   },
   {
     text: "О проекте",
-    href: "/info/"
+    href: "/info"
   }
 ];
 
