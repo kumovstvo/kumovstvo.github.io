@@ -15,7 +15,8 @@ let footerHTML = `
   <div id="footerTitle">(c) Система «Кумовство»</div>
   <div style="font-size: 14px; color:#6a6e72;">
   При поддержке МКФЗ «Typuщво Interparsing» <br>
-  Для связи: <a href="mailto:kumovstvo@inbox.ru">kumovstvo@inbox.ru</a>
+  Для связи: <a href="mailto:kumovstvo@inbox.ru">kumovstvo@inbox.ru</a> <br>
+  Новости: <a href="https://t.me/kumovstvo_priem">https://t.me/kumovstvo_priem</a>
   </div>
   <p>Точность информации не гарантируется</p>
   <p>Мы не курим и вам не советуем</p>
