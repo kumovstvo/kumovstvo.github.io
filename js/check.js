@@ -1,3 +1,19 @@
+function hideVuz(vuz) {
+  let table = document.getElementById(`${vuz}-table`);
+  if(table.style.display != "table") {
+    table.style.display = "table";
+  } else {
+    table.style.display = "none";
+  }
+
+  let comment = document.getElementById(`${vuz}-comment`);
+  if(comment.style.display != "block") {
+    comment.style.display = "block";
+  } else {
+    comment.style.display = "none";
+  }
+}
+
 function loadLgots() {
   if(!localStorage.getItem("achs")) localStorage["achs"]="";
   let text = localStorage["achs"].split('|');
@@ -18,8 +34,8 @@ function loadLgots() {
   for(const vuz in VUZS) {
     HTML += `<div class="vuz">
       <button class="vuz-name" onclick="hideVuz('${vuz}')" title="${VUZS[vuz].fullName}">${VUZS[vuz].name}</button>
-      <span class="vuz-comment">${VUZS[vuz].comment}</span>
-      <table class="vuz-table" style="border-collapse: collapse;">
+      <span id="${vuz}-comment" class="vuz-comment">${VUZS[vuz].comment}</span>
+      <table id="${vuz}-table" class="vuz-table" style="border-collapse: collapse;">
     `;
     for(const i in VUZS[vuz].programs) {
       HTML += `<tr>
