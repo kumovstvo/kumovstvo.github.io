@@ -6,6 +6,8 @@ function loadLgots() {
   for(let i = 0; i < text.length; ++i) {
     text[i] = text[i].split(';');
     if(text[i].length != 6) continue;
+
+    if(!achs.hasOwnProperty(text[i][0])) achs[text[i][0]] = {};
     achs[text[i][0]][`${text[i][3]}_${text[i][4]}`] = {
       status: text[i][1],
       class: text[i][2]
@@ -13,7 +15,7 @@ function loadLgots() {
   }
 
   let HTML = "";
-  for(const vuz of vuzs) {
+  for(const vuz in VUZS) {
     HTML += `<div class="vuz">
       <button class="vuz-name" onclick="hideVuz('${vuz}')" title="${VUZS[vuz].fullName}">${VUZS[vuz].name}</button>
       <span class="vuz-comment">${VUZS[vuz].comment}</span>
@@ -32,6 +34,7 @@ function loadLgots() {
           <td>
             <table class="vuz-programm-subjects">
               <tr>`;
+      let lgots = {};
       for(const e of VUZS[vuz].programs[i].ege) {
         if(e == 'F')
           HTML += `<th title="Физика">Ф</th>`;
@@ -63,19 +66,19 @@ function loadLgots() {
       HTML += `<th title="Дополнительные баллы">+</th></tr>`
       lgots['+'] = [];
 
-      for(const list in now) {
+      for(const list in achs) {
         if(!VUZS[vuz].programs[i].lgots.hasOwnProperty(list)) continue;
-        for(const ol in now[list]) {
+        for(const ol in achs[list]) {
           if(!VUZS[vuz].programs[i].lgots[list].hasOwnProperty(ol)) continue;
           for(const lgota of VUZS[vuz].programs[i].lgots[list][ol]) {
             if(lgota.predmet == "*") {
               for(const j in lgots) {
-                if(j != '+') lgots.push([Number(lgota.lgota), ol])
+                if(j != '+') lgots[j].push([Number(lgota.lgota), ol])
               }
             } else {
-              for(const subject of lgots.predmet) {
+              for(const subject of lgota.predmet) {
                 if(lgots.hasOwnProperty(subject)) {
-                  lgots[UU].push([Number(U.lgota), ol]);
+                  lgots[subject].push([Number(lgota.lgota), ol]);
                 }
               }
             }
@@ -95,7 +98,7 @@ function loadLgots() {
             if(j[0] == 0) HTML += `БВИ: ${j[1]}\n`;
             else if(j[0] == -1) HTML += `100: ${j[1]}\n`;
           }
-          HTML += `>`;
+          HTML += `">`;
           if(mx == -1) HTML += `100</td>`;
           else if(mx == 0) HTML += `БВИ</td>`;
         }
