@@ -63,7 +63,7 @@ function loadAchievments() {
       &#183;
       <span class="achStatus">${text[i][1] == "W" ? "Победитель" : (text[i][1] == "P" ? "Призёр" : "Участник")}</span>
       &#183;
-      <button class="achDelete" onclick="deleteAcievment(${i})">Удалить</button>
+      <button class="achDelete" onclick="deleteAcievment(${i}); loadAchievments();">Удалить</button>
     </div>
     `;
   }
