@@ -18,7 +18,6 @@ function parseVUZPrograms(programs, text) {
 
   let res = new Set();
   for(const pr of text) {
-    console.log(pr);
     if(pr[0] == '+') {
       for(let prg in programs) {
         if(programs[prg].code.includes(pr.slice(1))) {
@@ -113,7 +112,13 @@ function loadVuzs() {
 
       for(const program of progs) {
         for(const olymp of olymps) {
-          programs[program].lgots[olymp[0]][ol].push({
+          if(!programs[program].lgots.hasOwnProperty(olymp[0])) {
+            programs[program].lgots[olymp[0]] = {};
+          }
+          if(!programs[program].lgots[olymp[0]].hasOwnProperty(olymp[1])) {
+            programs[program].lgots[olymp[0]][olymp[1]] = [];
+          } 
+          programs[program].lgots[olymp[0]][olymp[1]].push({
             status: minStatus,
             lgota: lgota,
             predmet: predmet
