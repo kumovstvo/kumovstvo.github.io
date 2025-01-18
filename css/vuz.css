@@ -1,4 +1,4 @@
-.lgota {
+.vuz {
   max-width: 1000px;
   margin: 0 auto;
   margin-bottom: 30px;
@@ -9,21 +9,10 @@
   border-style: hidden;
 }
 
-.lgota-table {
-  width: 100%;
-}
-
-.lgota td {
-  height: 60px;
-  max-height: 100px;
-  vertical-align: middle;
-  padding-bottom: 10px;
-}
-
-.lgota-vuz-name {
+.vuz-name {
   display: block;
-  background-color: #00000000;
   width: 100%;
+  background-color: #00000000;
   height: fit-content;
   margin: 0 auto;
   font-family: "Nozhik";
@@ -31,24 +20,31 @@
   color: white;
 }
 
-.lgota-programm-code {
-  color: #baffd9;
-  font-size: 15px;
-  font-family: Montserrat;
-  margin-left: 12px;
-  width: fit-content;
-}
-
-.lgota-programm-name {
-  margin-left: 10px;
+.vuz-comment {
+  display: block;
+  width: 100%;
+  background-color: #00000000;
+  height: fit-content;
+  text-align: center;
   color: white;
-  font-size: 25px;
+  font-size: 20px;
   font-family: Montserrat;
-  line-height: 0.9;
-  width: fit-content;
 }
 
-.lgota-programm-number {
+
+.vuz-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vuz td {
+  height: 60px;
+  max-height: 100px;
+  vertical-align: middle;
+  padding-bottom: 10px;
+}
+
+.vuz-programm-number {
   width: 70px;
   text-align: center;
   border-right: #baffd9 solid 1px;
@@ -57,7 +53,24 @@
   font-size: 40px;
 }
 
-.lgota-programm-ege {
+.vuz-programm-code {
+  color: #baffd9;
+  font-size: 15px;
+  font-family: Montserrat;
+  margin-left: 12px;
+  width: fit-content;
+}
+
+.vuz-programm-name {
+  margin-left: 10px;
+  color: white;
+  font-size: 25px;
+  font-family: Montserrat;
+  line-height: 0.9;
+  width: fit-content;
+}
+
+.vuz-programm-ege {
   width: 70px;
   text-align: center;
   vertical-align: middle;
@@ -65,7 +78,12 @@
   color:white;
   font-size: 20px;
 }
-.lgota-programm-lgota td, .lgota-programm-lgota th {
+
+.vuz-programm-subjects {
+  table-layout: fixed;
+  margin-left: auto;
+}
+.vuz-programm-subjects td, .vuz-programm-subjects th {
   font-family: Better VCR;
   min-width: 48px;
   max-width: 48px;
@@ -75,11 +93,6 @@
   color: white;
 }
 
-.lgota-programm-lgota-td {
+.vuz-programm-subjects-td {
   text-align: right;
-}
-
-.lgota-programm-lgota {
-  table-layout:fixed;
-  margin-left: auto;
 }

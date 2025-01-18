@@ -6,13 +6,45 @@
   <link rel="stylesheet" type="text/css" href="./css/main.css">
   <link rel="stylesheet" type="text/css" href="./css/header.css">
   <link rel="stylesheet" type="text/css" href="./css/footer.css">
-  <link rel="stylesheet" type="text/css" href="./css/lgota.css">
+  <link rel="stylesheet" type="text/css" href="./css/vuz.css">
   <script src="js/olymps.js"></script>
 </head>
 <body id="root">
   <script src="js/genHeader.js"></script>
   <div id="content" style="min-height:1000px">
-    <div id="ZZZ">
+    <div class="vuz">
+      <button class="vuz-name" onclick="hideVuz('itmo.csv')" title="Институт точной механики и оптики">Университет ИТМО</button>
+      <span class="vuz-comment">На данный момент добавлены только льготы для поступления в Москву, для филиалов будет позднее. Только ВсОШ.</span>
+      <table class="vuz-table" style="border-collapse: collapse;">
+        <tr>
+          <td class="vuz-programm-number">1</td>
+          <td class="vuz-programm">
+            <div>
+              <div class="vuz-programm-code">01.03.02</div>
+              <div class="vuz-programm-name">Прикладная физика</div>
+            </div>
+          </td>
+          <td class="vuz-programm-ege" title="Средний балл ЕГЭ поступивших в прошлом году">---</td>
+          <td>
+            <table class="vuz-programm-subjects">
+              <tr>
+                <th title="Математика">М</th>
+                <th title="Русский язык">РЯ</th>
+                <th title="Химия">Х</th>
+                <th title="Физика">Ф</th>
+                <th title="Дополнительные баллы">+</th>
+              </tr>
+              <tr>
+                <td title="100: Открытая олимпиада школьников (математика, 10)">100</td>
+                <td title="Льгот не найдено">-</td>
+                <td title="Льгот не найдено">-</td>
+                <td title="БВИ: Всероссийская олимпиада школьников по физике (физика, 9)">БВИ</td>
+                <td>0</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
     </div>
     <script src="js/lgots.js"></script>
   </div>
