@@ -207,17 +207,17 @@ function hideVuz(id) {
 }
 
 function updateLgots() {
-  if(!localStorage.getItem("ach")) localStorage["ach"]="";
-  let text = localStorage["ach"].split("|");
+  if(!localStorage.getItem("achs")) localStorage["achs"]="";
+  let text = localStorage["achs"].split("|");
   let now = {};
 
   for(let i = 0; i < text.length; ++i) {
     text[i] = text[i].split(";");
     if(text[i].length != 6) continue;
     if(!now.hasOwnProperty(text[i][0])) now[text[i][0]] = {};
-    now[text[i][0]][`${text[i][1]} (${text[i][2]})`] = {
-      status: text[i][5],
-      class: text[i][4]
+    now[text[i][0]][`${text[i][3]} (${text[i][4]})`] = {
+      status: text[i][1],
+      class: text[i][2]
     };
   }
 
