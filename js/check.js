@@ -26,7 +26,7 @@ function loadLgots() {
     if(!achs.hasOwnProperty(text[i][0])) achs[text[i][0]] = {};
     achs[text[i][0]][`${text[i][3]}_${text[i][4]}`] = {
       status: text[i][1],
-      class: text[i][2]
+      class: Number(text[i][2])
     }
   }
 
@@ -87,6 +87,12 @@ function loadLgots() {
         for(const ol in achs[list]) {
           if(!VUZS[vuz].programs[i].lgots[list].hasOwnProperty(ol)) continue;
           for(const lgota of VUZS[vuz].programs[i].lgots[list][ol]) {
+            if(list != "vsosh.csv") {
+              if(Number(lgota.lgota) == -1 && achs[list][ol].class < VUZS[vuz].minClass100) continue;
+              if(Number(lgota.lgota) == 0 && achs[list][ol].class < VUZS[vuz].minClassBVI) continue;
+              if(achs[list][ol].status == 'M' && (lgota.status == 'P' || lgota.status == 'W')) continue;
+              if(achs[list][ol].status == 'P' && (lgota.status == 'W')) continue;
+            }
             if(lgota.predmet == "*") {
               for(const j in lgots) {
                 if(j != '+') lgots[j].push([Number(lgota.lgota), ol])

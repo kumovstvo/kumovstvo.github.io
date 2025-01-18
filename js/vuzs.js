@@ -77,7 +77,7 @@ function loadVuzs() {
     let text = getFileText("./res/vuzs/"+l).split('\n');
 
     let i = 0;
-    let shortName = "", longName = "", comment = "", ege = "---", minClassBVI = NaN, minClass100 = NaN;
+    let shortName = "", longName = "", comment = "", minClassBVI = NaN, minClass100 = NaN;
     let programs = {};
     for(; i < text.length; ++i) {
       text[i] = text[i].split(';');
@@ -85,9 +85,8 @@ function loadVuzs() {
         shortName = text[i][1];
         longName = text[i][2];
         comment = text[i][3];
-        ege = text[i][4];
-        minClassBVI = Number(text[i][5]);
-        minClass100 = Number(text[i][6]);
+        minClassBVI = Number(text[i][4]);
+        minClass100 = Number(text[i][5]);
       } else if(text[i][0] == "#lgots") {
         ++i; break;
       } else {
