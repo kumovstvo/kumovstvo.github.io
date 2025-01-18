@@ -1,0 +1,85 @@
+.lgota {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  padding: 10px 30px;
+  background-color: #289e5d;
+
+  border-radius: 40px;
+  border-style: hidden;
+}
+
+.lgota-table {
+  width: 100%;
+}
+
+.lgota td {
+  height: 60px;
+  max-height: 100px;
+  vertical-align: middle;
+  padding-bottom: 10px;
+}
+
+.lgota-vuz-name {
+  display: block;
+  background-color: #00000000;
+  width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+  font-family: "Nozhik";
+  font-size: 80px;
+  color: white;
+}
+
+.lgota-programm-code {
+  color: #baffd9;
+  font-size: 15px;
+  font-family: Montserrat;
+  margin-left: 12px;
+  width: fit-content;
+}
+
+.lgota-programm-name {
+  margin-left: 10px;
+  color: white;
+  font-size: 25px;
+  font-family: Montserrat;
+  line-height: 0.9;
+  width: fit-content;
+}
+
+.lgota-programm-number {
+  width: 70px;
+  text-align: center;
+  border-right: #baffd9 solid 1px;
+  font-family: USSR Stencil;
+  color: white;
+  font-size: 40px;
+}
+
+.lgota-programm-ege {
+  width: 70px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: Montserrat;
+  color:white;
+  font-size: 20px;
+}
+.lgota-programm-lgota td, .lgota-programm-lgota th {
+  font-family: Better VCR;
+  min-width: 48px;
+  max-width: 48px;
+  text-align: center;
+  vertical-align: middle;
+  height: 30px;
+  color: white;
+}
+
+.lgota-programm-lgota-td {
+  text-align: right;
+}
+
+.lgota-programm-lgota {
+  table-layout:fixed;
+  margin-left: auto;
+}
