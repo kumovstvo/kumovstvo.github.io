@@ -40,7 +40,7 @@ function deleteAcievment(id) {
 
   localStorage["achs"] = "";
   for(let i = 0; i < text.length; ++i) {
-    localStorage += text[i] + "|";
+    localStorage["achs"] += text[i] + "|";
   }
 }
 
