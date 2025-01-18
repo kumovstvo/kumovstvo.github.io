@@ -33,6 +33,17 @@ function addAchievment() {
   alert("Достижение добавлено");
 }
 
+function deleteAcievment(id) {
+  if(!localStorage.getItem("achs")) localStorage["achs"]="";
+  let text = localStorage["achs"].split('|');
+  delete text[id];
+
+  localStorage["achs"] = "";
+  for(let i = 0; i < text.length; ++i) {
+    localStorage += text[i] + "|";
+  }
+}
+
 function loadAchievments() {
   let text = localStorage["achs"].split('|');
 
@@ -52,7 +63,7 @@ function loadAchievments() {
       &#183;
       <span class="achStatus">${text[i][1] == "W" ? "Победитель" : (text[i][1] == "P" ? "Призёр" : "Участник")}</span>
       &#183;
-      <button class="achDelete">Удалить</button>
+      <button class="achDelete" onclick="deleteAcievment(${i})">Удалить</button>
     </div>
     `;
   }
