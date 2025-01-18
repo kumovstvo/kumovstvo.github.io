@@ -4,6 +4,7 @@ var olympLists = [
   "rsosh-22_23.csv",
   "rsosh-21_22.csv",
   "rsosh-20_21.csv",
+  "vsosh.csv"
 ];
 
 function getFileText(filePath) {
