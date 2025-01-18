@@ -1,10 +1,5 @@
 var vuzLists = [
-  "rsosh-24_25.csv",
-  "rsosh-23_24.csv",
-  "rsosh-22_23.csv",
-  "rsosh-21_22.csv",
-  "rsosh-20_21.csv",
-  "vsosh.csv"
+  "mephi.csv"
 ];
 
 function getFileText(filePath) {
@@ -21,11 +16,11 @@ function getFileText(filePath) {
 function parseVUZPrograms(programs, text) {
   text = text.split(' ');
 
-  let res = Set();
+  let res = new Set();
   for(const pr in text) {
     if(pr[0] == '+') {
       for(let prg in programs) {
-        if(programs[prg].code.includes(prg.slice(1))) {
+        if(programs[prg].code.includes(pr.slice(1))) {
           res.add(prg);
         }
       }
@@ -35,18 +30,18 @@ function parseVUZPrograms(programs, text) {
       }
     } else if(pr[0] == '-') {
       for(let prg in programs) {
-        if(programs[prg].code.includes(prg.slice(1))) {
+        if(programs[prg].code.includes(pr.slice(1))) {
           res.clear(prg);
         }
       }
     } else if(pr[0] == '#') {
       for(let prg in programs) {
-        if(programs[prg].ege.includes(prg.slice(1))) {
+        if(programs[prg].ege.includes(pr.slice(1))) {
           res.add(prg);
         }
       }
     } else {
-      res.add(prg);
+      res.add(pr);
     }
   }
 
@@ -56,19 +51,19 @@ function parseVUZPrograms(programs, text) {
 function parseOlymp(olymps, olymp, profile, minLevel) {
   minLevel = Number(minLevel);
 
-  let res = Set()
+  let res = new Set()
   if(olymp == "*") {
     for(const l of olympLists) {
       for(const ol in olymps[l]) {
         if(olymps[l][ol].hasOwnProperty(profile) && minLevel >= olymps[l][ol][profile]) {
-          Set.add([l, `${ol}_${profile}`]);
+          res.add([l, `${ol}_${profile}`]);
         }
       }
     }
   } else {
     for(const l of olympLists) {
-      if(olymps[l].hasOwnProperty(olymp) && olymps[l][olymp].hasOwnProperty(profile) && minLevel >= olymps[l][ol][profile]) {
-        Set.add([l, `${ol}_${profile}`]);
+      if(olymps[l].hasOwnProperty(olymp) && olymps[l][olymp].hasOwnProperty(profile) && minLevel >= olymps[l][olymp][profile]) {
+        res.add([l, `${olymp}_${profile}`]);
       }
     }
   }
