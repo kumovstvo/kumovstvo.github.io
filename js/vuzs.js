@@ -132,7 +132,6 @@ function loadVuzs() {
       comment: comment,
       minClass100: minClass100,
       minClassBVI: minClassBVI,
-      avgEge: ege,
       programs: programs
     };
   }
@@ -140,5 +139,7 @@ function loadVuzs() {
   return vuzs;
 }
 
+console.log("Start loading vuzs...");
 var VUZS = loadVuzs();
+console.log("Loaded:");
 console.log(VUZS);
