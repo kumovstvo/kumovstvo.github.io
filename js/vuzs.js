@@ -17,7 +17,8 @@ function parseVUZPrograms(programs, text) {
   text = text.split(' ');
 
   let res = new Set();
-  for(const pr in text) {
+  for(const pr of text) {
+    console.log(pr);
     if(pr[0] == '+') {
       for(let prg in programs) {
         if(programs[prg].code.includes(pr.slice(1))) {
@@ -67,6 +68,8 @@ function parseOlymp(olymps, olymp, profile, minLevel) {
       }
     }
   }
+
+  return Array.from(res);
 }
 
 function loadVuzs() {
