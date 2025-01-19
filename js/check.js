@@ -34,8 +34,8 @@ function loadLgots() {
   for(const vuz in VUZS) {
     HTML += `<div class="vuz">
       <button class="vuz-name" onclick="hideVuz('${vuz}')" title="${VUZS[vuz].fullName}">${VUZS[vuz].name}</button>
-      <span id="${vuz}-comment" class="vuz-comment" style="display: block;">${VUZS[vuz].comment}</span>
-      <table id="${vuz}-table" class="vuz-table" style="border-collapse: collapse; display: table;">
+      <span id="${vuz}-comment" class="vuz-comment" style="display: hidden;">${VUZS[vuz].comment}</span>
+      <table id="${vuz}-table" class="vuz-table" style="border-collapse: collapse; display: hidden;">
     `;
     for(const i in VUZS[vuz].programs) {
       HTML += `<tr>
