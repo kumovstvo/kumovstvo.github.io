@@ -110,6 +110,7 @@ function loadVuzs() {
     for(; i < text.length; ++i) {
       text[i] = text[i].split(';');
       if(text[i].length != 6) continue;
+      console.log(text[i]);
 
       let minStatus = text[i][3][0];
       let lgota = text[i][0];
