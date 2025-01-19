@@ -31,7 +31,7 @@ function parseVUZPrograms(programs, text) {
     } else if(pr[0] == '-') {
       for(let prg in programs) {
         if(programs[prg].code.includes(pr.slice(1))) {
-          res.clear(prg);
+          res.delete(prg);
         }
       }
     } else if(pr[0] == '#') {
@@ -108,7 +108,8 @@ function loadVuzs() {
 
       let progs = parseVUZPrograms(programs, text[i][4]);
       let olymps = parseOlymp(OLYMPS, text[i][1], text[i][2], Number(text[i][3][1]));
-
+      console.log(text[i][4]);
+      console.log(progs);
       for(const program of progs) {
         for(const olymp of olymps) {
           if(!programs[program].lgots.hasOwnProperty(olymp[0])) {
