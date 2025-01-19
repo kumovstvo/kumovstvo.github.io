@@ -43,6 +43,7 @@ function parseVUZPrograms(programs, text) {
       }
     } else if(pr[0] == '.') {
       for(let prg in programs) {
+        console.log(typeof programs[prg].groups[0], typeof pr.slice(1));
         if(programs[prg].groups.includes(pr.slice(1))) {
           res.add(prg);
         }
