@@ -54,7 +54,7 @@ function loadAchievments() {
     HTML += `
     <div class="achievment ${text[i][1]}Ach">
       <span class="achTitle">${text[i][3]}</span>
-      <span class="achList">${text[i][0]}</span>
+      <span class="achList">${OLYMPS[text[i][0]]["#name"]["#name"]}</span>
       <span class="achSeparator">&#183;</span>
       <span class="achProfile">${text[i][4]}</span>
       &#183;
