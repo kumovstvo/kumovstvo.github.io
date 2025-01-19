@@ -1,5 +1,5 @@
 var vuzLists = [
-  "mephi.csv",
+  // "mephi.csv",
   "miet.csv"
 ];
 
@@ -43,7 +43,6 @@ function parseVUZPrograms(programs, text) {
       }
     } else if(pr[0] == '.') {
       for(let prg in programs) {
-        console.log(typeof programs[prg].groups[0], typeof pr.slice(1));
         if(programs[prg].groups.includes(pr.slice(1))) {
           res.add(prg);
         }
@@ -110,7 +109,6 @@ function loadVuzs() {
     for(; i < text.length; ++i) {
       text[i] = text[i].split(';');
       if(text[i].length != 6) continue;
-      console.log(text[i]);
 
       let minStatus = text[i][3][0];
       let lgota = text[i][0];
@@ -118,6 +116,7 @@ function loadVuzs() {
 
       let progs = parseVUZPrograms(programs, text[i][4]);
       let olymps = parseOlymp(OLYMPS, text[i][1], text[i][2], Number(text[i][3][1]));
+      console.log(progs, olymps, text[i][1], text[i][2], Number(text[i][3][1]));
       for(const program of progs) {
         if(!program.length) continue;
         for(const olymp of olymps) {
