@@ -75,7 +75,8 @@ document.querySelector('#achType').addEventListener('change', function (e) {
 
   let optionsHTML = `<option value="*" disabled selected></option>`;
   for(const i in olymps) {
-    optionsHTML += `<option value="${i}">${i}</option>\n`;
+    if(i != "#name")
+      optionsHTML += `<option value="${i}">${i}</option>\n`;
   }
   
   document.getElementById('achOlymp').innerHTML = optionsHTML;
@@ -87,11 +88,10 @@ document.querySelector('#achOlymp').addEventListener('change', function (e) {
   let olympName = document.getElementById("achOlymp").value;
   let profiles = OLYMPS[listName][olympName];
 
-  let I = 0;
   let optionsHTML = `<option value="*" disabled selected></option>`;
   for(const i in profiles) {
-    optionsHTML += `<option value="${i}">${i}</option>\n`;
-    I++;
+    if(i != "#name")
+      optionsHTML += `<option value="${i}">${i}</option>\n`;
   }
   
   document.getElementById('achProfile').innerHTML = optionsHTML;
