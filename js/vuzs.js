@@ -41,6 +41,12 @@ function parseVUZPrograms(programs, text) {
           res.add(prg);
         }
       }
+    } else if(pr[0] == '.') {
+      for(let prg in programs) {
+        if(programs[prg].groups.includes(pr.slice(1))) {
+          res.add(prg);
+        }
+      }
     } else {
       res.add(pr);
     }
@@ -95,6 +101,7 @@ function loadVuzs() {
         programs[text[i][0]].code = text[i][1].split(", ");
         programs[text[i][0]].name = text[i][2];
         programs[text[i][0]].ege = text[i][3];
+        programs[text[i][0]].groups = text[i][4].split(' ');
         programs[text[i][0]].lgots = {};
       }
     }
