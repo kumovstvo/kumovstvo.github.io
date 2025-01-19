@@ -1,5 +1,6 @@
 var vuzLists = [
-  "mephi.csv"
+  "mephi.csv",
+  "miet.csv"
 ];
 
 function getFileText(filePath) {
