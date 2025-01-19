@@ -108,10 +108,10 @@ function loadVuzs() {
 
       let progs = parseVUZPrograms(programs, text[i][4]);
       let olymps = parseOlymp(OLYMPS, text[i][1], text[i][2], Number(text[i][3][1]));
-      console.log(text[i][4]);
-      console.log(progs);
       for(const program of progs) {
+        if(!program.length) continue;
         for(const olymp of olymps) {
+          if(!olymp.length) continue;
           if(!programs[program].lgots.hasOwnProperty(olymp[0])) {
             programs[program].lgots[olymp[0]] = {};
           }
