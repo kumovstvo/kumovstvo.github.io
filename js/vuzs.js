@@ -1,4 +1,5 @@
 var vuzLists = [
+  "mipt.csv",
   "mephi.csv",
   "miet.csv"
 ];
@@ -116,7 +117,6 @@ function loadVuzs() {
 
       let progs = parseVUZPrograms(programs, text[i][4]);
       let olymps = parseOlymp(OLYMPS, text[i][1], text[i][2], Number(text[i][3][1]));
-      console.log(progs, olymps, text[i][1], text[i][2], Number(text[i][3][1]));
       for(const program of progs) {
         if(!program.length) continue;
         for(const olymp of olymps) {
