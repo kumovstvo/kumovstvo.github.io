@@ -2,6 +2,7 @@ var vuzLists = [
   "mipt.csv",
   "bmstu.csv",
   "etu.csv",
+  "itmo.csv",
   "mephi.csv",
   "miet.csv"
 ];
